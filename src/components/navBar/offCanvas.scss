@@ -1,3 +1,15 @@
 #burger-menu {
     display: none;
 }
+
+.burger-nav {
+    display: flex;
+    flex-direction: column;
+}
+
+div.offcanvas {
+    width: auto !important;
+    height: 200px !important;
+    background-color: #181818;
+    color: white;
+}

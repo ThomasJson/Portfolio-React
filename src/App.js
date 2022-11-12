@@ -8,6 +8,9 @@ import HomeScreen from './screens/homeScreen/HomeScreen';
 import BlogScreen from './screens/blogScreen/BlogScreen';
 import ContactScreen from './screens/contactScreen/ContactScreen';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle';
+
 function App() {
   return (
     <BrowserRouter>
