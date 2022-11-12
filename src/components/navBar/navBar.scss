@@ -6,32 +6,43 @@
     justify-content: space-between;
     align-items: center;
     
-    background-color: orange;
+    background-color: #181818;
 }
+
+// ---------------------------------------------------------- LEFT BLOC -------------------------------------------------------------------
 .nameNav-bloc {
     display: flex;
     flex-direction: row;
 }
 .name {
     width: auto;
+    margin-left: 8px !important;
+    color: white;
 }
+
+// ---------------------------------------------------------- RIGHT BLOC -------------------------------------------------------------------
 .navBar {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     align-items: center;
+    margin-right: 8px !important;
 }
 .btn-bloc {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
 }
-
+.btn-spacing {
+    margin-right: 8px !important;
+}
 .login-bloc {
     width: auto !important;
     display: flex;
     flex-direction: row;
 }
 
+// ---------------------------------------------------------- BTN STYLE -------------------------------------------------------------------
 button.btn.btn-primary {
   background-color: red !important;
   border-color: white !important;

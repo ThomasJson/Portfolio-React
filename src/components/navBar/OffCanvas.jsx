@@ -12,7 +12,7 @@ const OffCanvas = ({ name, ...props }) => {
 
   return (
     <>
-      <Button onClick={handleShow}>
+      <Button id="burger-menu" className="btn-spacing" onClick={handleShow}>
         <AiOutlineMenu />
       </Button>
       <Offcanvas show={show} onHide={handleClose} {...props}>

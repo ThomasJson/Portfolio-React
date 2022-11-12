@@ -17,6 +17,17 @@
 
 a {
   text-decoration: none !important;
+  color: white !important;
+}
+
+@media all and (max-device-width: 480px)
+{
+  #burger-menu {
+    display: block !important;
+  }
+  .navBar {
+    display: none !important;
+  }
 }
 
 @import "~bootstrap/scss/bootstrap";
