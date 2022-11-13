@@ -14,7 +14,7 @@
   padding: 0px !important;
 }
 main {
-  height: 90vh;
+  min-height: 90vh;
   background-color: #18191A;
 }
 a {
@@ -58,6 +58,11 @@ h1 {
   }
   .navBar {
     display: none !important;
+  }
+  .blog-container {
+    display: flex;
+    flex-direction: column !important;
+    align-items: center !important;
   }
 }
 
