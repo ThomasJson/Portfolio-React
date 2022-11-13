@@ -30,12 +30,12 @@ const NavBar = () => {
           </Nav>
 
           <Container fluid className="login-bloc">
-            <Button className="btn-spacing" onClick={() => setModalLogin(true)}>
+            <Button className="btn-spacing btn-login" onClick={() => setModalLogin(true)}>
               <BiLogInCircle />
             </Button>
             <LoginModal show={modalLogin} onHide={() => setModalLogin(false)} />
 
-            <Button className="btn-spacing" onClick={() => setModalRegister(true)}>
+            <Button className="btn-spacing btn-register" onClick={() => setModalRegister(true)}>
               <BiUserPlus />
             </Button>
             <RegisterModal

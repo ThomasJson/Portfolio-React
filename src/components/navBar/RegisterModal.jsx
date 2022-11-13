@@ -51,7 +51,7 @@ const RegisterModal = (props) => {
             name="birthday"
           ></input>
 
-          <Button type="submit">S'inscrire</Button>
+          <Button type="submit" className="btn-register">S'inscrire</Button>
         </form>
       </Modal.Body>
     </Modal>

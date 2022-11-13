@@ -22,7 +22,7 @@ const LoginModal = (props) => {
         <form className="coL gap-3 mb-2">
           <input type="text" placeholder="Adresse e-mail" name="email" />
           <input type="password" placeholder="Mot de passe" name="mp" />
-          <Button type="submit">Se connecter</Button>
+          <Button type="submit" className="btn-login">Se connecter</Button>
         </form>
         <NavLink to="/">Mot de passe oublié ?</NavLink>
 

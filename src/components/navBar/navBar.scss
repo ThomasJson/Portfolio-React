@@ -31,6 +31,12 @@
     align-items: center;
     margin-right: 8px !important;
 }
+.navBar a:hover {
+    border-bottom: 1px solid white !important;
+}
+.navBar a:focus {
+    border-bottom: 1px solid white !important;
+}
 .btn-bloc {
     padding: 0px !important;
     display: flex;
@@ -53,9 +59,18 @@ button.btn.btn-primary {
   background-color: #404040;
   border-color: #404040 !important;
   border-radius: 5px !important;
-  color: white !important;
   padding: 8px !important;
   font-weight: bold;
   letter-spacing: 1px;
 }
-
+.btn-register:hover {
+    color: #404040 !important;
+    background-color: white !important;
+}
+.btn-login {
+    color: rgb(93, 191, 122) !important;
+}
+.btn-login:hover {
+    color: white !important;
+    background-color: rgb(93, 191, 122) !important;
+}
