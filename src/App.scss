@@ -10,6 +10,18 @@
   box-sizing: border-box !important;
   font-family: "Raleway-Light";
 }
+.container {
+  padding: 0px !important;
+}
+.modal-header {
+  button.btn-close {
+    color: white !important;
+  }
+}
+main {
+  height: 90vh;
+  background-color: #18191A;
+}
 a {
   text-decoration: none !important;
   color: white !important;
@@ -45,9 +57,7 @@ h1 {
 }
 
 // ---------------------------------------- MEDIA QUERIES ----------------------------------------------------
-
-@media all and (max-device-width: 520px)
-{
+@media screen and (max-width: 520px) {
   #burger-menu {
     display: block !important;
   }

@@ -7,6 +7,7 @@ import { NavLink } from "react-router-dom";
 import { Nav } from "react-bootstrap";
 
 const OffCanvas = ({ name, ...props }) => {
+
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -18,14 +19,11 @@ const OffCanvas = ({ name, ...props }) => {
         <AiOutlineMenu />
       </Button>
       <Offcanvas className="gap-3" show={show} onHide={handleClose} {...props}>
-        <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Navigation</Offcanvas.Title>
-        </Offcanvas.Header>
         <Offcanvas.Body>
           <Nav className="burger-nav gap-3">
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="/blog">Blog</NavLink>
-            <NavLink to="/contact">Contact</NavLink>
+            <NavLink to="/" onClick={handleClose}>Home</NavLink>
+            <NavLink to="/blog" onClick={handleClose}>Blog</NavLink>
+            <NavLink to="/contact" onClick={handleClose}>Contact</NavLink>
           </Nav>
         </Offcanvas.Body>
       </Offcanvas>

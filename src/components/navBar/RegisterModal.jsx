@@ -51,24 +51,9 @@ const RegisterModal = (props) => {
             name="birthday"
           ></input>
 
-          {/* <label htmlFor="sexe">Sexe</label>
-          <Container className="rOw betWeen margin-bottom">
-            <Container className="rOw align-center input-spacing border">
-              <label htmlFor="">Homme</label>
-              <input type="radio" name="sexe" value="Homme" />
-            </Container>
-            <Container className="rOw align-center input-spacing border">
-              <label htmlFor="">Femme</label>
-              <input type="radio" name="sexe" value="Femme" />
-            </Container>
-          </Container> */}
-
           <Button type="submit">S'inscrire</Button>
         </form>
       </Modal.Body>
-      {/* <Modal.Footer>
-        <Button onClick={props.onHide}>Close</Button>
-      </Modal.Footer> */}
     </Modal>
   );
 };
