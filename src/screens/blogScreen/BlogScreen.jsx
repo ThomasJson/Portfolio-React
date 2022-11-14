@@ -23,9 +23,14 @@ const BlogScreen = () => {
     <main>
       <Container className="blog-container">
         {/* // TODO Rajouter la category-nav */}
-        <Article />
-        <Article />
-        <Article />
+
+        {articles.data?.map((article) => {
+          return (
+            <Container key={article.Id_article}>
+              <Article title={article.title} content={article.content} />
+            </Container>
+          );
+        })}
       </Container>
     </main>
   );
