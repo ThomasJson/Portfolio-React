@@ -7,6 +7,7 @@ const BlogScreen = () => {
     return (
         <main>
             <Container className='blog-container'>
+                {/* // TODO Rajouter la category-nav */}
                 <Article />
                 <Article />
                 <Article />
