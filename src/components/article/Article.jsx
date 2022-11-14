@@ -2,14 +2,14 @@ import "./article.scss";
 import React from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import { Container } from "react-bootstrap";
+// import { Container } from "react-bootstrap";
 
 const Article = ({title, content, image, category}) => {
   return (
     <>
       <Card className="card-spacing" style={{ width: "18rem" }}>
-        {/* <Container>{}</Container>
-        <Card.Img variant="top" src={} /> */}
+        {/* <Container>{}</Container> */}
+        <Card.Img variant="top" src={image} />
         <Card.Body>
           <Card.Title>{title}</Card.Title>
           <Card.Text>

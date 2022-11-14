@@ -6,6 +6,7 @@ import Article from "../../components/article/Article";
 
 const BlogScreen = () => {
   const [articles, setArticles] = useState([]);
+  const [images, setImages] = useState([]);
 
   useEffect(() => {
     fetch("http://portfolio-api/article", {
@@ -19,6 +20,18 @@ const BlogScreen = () => {
 
   console.log(articles);
 
+  useEffect(() => {
+    fetch("http://portfolio-api/image", {
+      method: "GET",
+    })
+      .then((resp) => resp.json())
+      .then((json) => {
+        setImages(json);
+      });
+  }, []);
+
+  console.log(images);
+
   return (
     <main>
       <Container className="blog-container">
@@ -26,9 +39,12 @@ const BlogScreen = () => {
 
         {articles.data?.map((article) => {
           return (
-            <Container key={article.Id_article}>
-              <Article title={article.title} content={article.content} />
-            </Container>
+            <Article
+              key={article.Id_article}
+              title={article.title}
+              content={article.content}
+              // image={article.Id_image}
+            />
           );
         })}
       </Container>
