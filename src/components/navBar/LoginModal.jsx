@@ -11,6 +11,15 @@ const LoginModal = (props) => {
     const formData = new FormData(e.target);
     const jsonData = Object.fromEntries(formData.entries());
     console.log(jsonData);
+
+    fetch("http://portfolio-api/app_user", {
+      method: "POST",
+      body: JSON.stringify(jsonData),
+    })
+      .then((resp) => resp.json())
+      .then((json) => {
+        console.log(json);
+      });
   };
 
   return (
@@ -31,7 +40,7 @@ const LoginModal = (props) => {
             id="email-input"
             type="email"
             placeholder="Adresse e-mail"
-            name="login"
+            name="mail"
           />
           <input
             id="pass-input"
