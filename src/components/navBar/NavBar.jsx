@@ -45,6 +45,7 @@ const NavBar = () => {
           </Container>
 
           <OffCanvas placement={"end"} />
+          
         </Container>
       </Container>
     </>

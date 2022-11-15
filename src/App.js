@@ -8,6 +8,10 @@ import HomeScreen from './screens/homeScreen/HomeScreen';
 import BlogScreen from './screens/blogScreen/BlogScreen';
 import ContactScreen from './screens/contactScreen/ContactScreen';
 
+import AdminScreen from './screens/adminScreen/AdminScreen';
+import AccountScreen from './screens/accountScreen/AccountScreen';
+import UserScreen from './screens/userScreen/UserScreen';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle';
 
@@ -21,6 +25,9 @@ function App() {
           <Route index element={<HomeScreen />} />
           <Route path="/blog" element={<BlogScreen />} />
           <Route path="/contact" element={<ContactScreen />} />
+          <Route path="/admin" element={<AdminScreen />}/>
+          <Route path="/account" element={<AccountScreen />} />
+          <Route path="/logged" element={<UserScreen />} />
 
         </Route>
         
