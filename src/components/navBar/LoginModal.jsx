@@ -1,24 +1,32 @@
 import "./loginModal.scss";
-import React from "react";
+import React, { useContext } from "react";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
-import { NavLink } from "react-router-dom";
+import { useNavigate, NavLink } from "react-router-dom";
 import { useState } from "react";
+import { AuthContext } from "../../contexts/AuthContext";
 
 const LoginModal = (props) => {
+  const { setAuth } = useContext(AuthContext);
+  const navigate = useNavigate();
+
   const [valid, setValid] = useState({ email: false, password: false });
+
   const validForm = (jsonData) => {
     const isValid = { email: false, password: false };
+
     const emailInput = document.getElementById("email-input");
-    const emailPattern = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+    const emailPattern = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
     if (emailPattern.test(emailInput.value)) {
       isValid.email = true;
     }
+
     const passwordInput = document.getElementById("password-input");
     const passwordPattern = /^(?=.*[A-Z]).{6,}$/;
     if (passwordPattern.test(passwordInput.value)) {
       isValid.password = true;
     }
+
     setValid(isValid);
     return isValid.email === true && isValid.password === true;
   };
@@ -40,6 +48,12 @@ const LoginModal = (props) => {
       .then((resp) => resp.json())
       .then((json) => {
         console.log(json);
+        if (json.data?.result) {
+          setAuth({ role: +json.data?.role });
+          navigate("/account");
+        } else {
+          setAuth({ role: 0 });
+        }
       });
   };
 
@@ -57,10 +71,6 @@ const LoginModal = (props) => {
       </Modal.Header>
       <Modal.Body>
         <form onSubmit={handleSubmit} className="coL gap-3 mb-2" noValidate>
-          {/* <label htmlFor="email-input" className="form-label">
-            Email address{" "}
-            <i className={"text-danger" + (valid.email ? " d-none" : "")}>*</i>
-          </label> */}
           <input
             id="email-input"
             type="email"
@@ -68,14 +78,8 @@ const LoginModal = (props) => {
             name="mail"
           />
           <i className={"text-danger" + (valid.email ? " d-none" : "")}>
-            * must be a valid email address
+            * Must be a valid email address
           </i>
-          {/* <label htmlFor="password-input" className="form-label">
-            Password{" "}
-            <i className={"text-danger" + (valid.password ? " d-none" : "")}>
-              *
-            </i>
-          </label> */}
           <input
             id="password-input"
             type="password"

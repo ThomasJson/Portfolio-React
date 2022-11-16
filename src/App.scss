@@ -66,4 +66,10 @@ h1 {
   }
 }
 
+.login-nav {
+  display: flex;
+  justify-content: center;
+  background-color: #18191A;
+}
+
 @import "~bootstrap/scss/bootstrap";

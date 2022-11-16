@@ -6,7 +6,6 @@ import Article from "../../components/article/Article";
 
 const BlogScreen = () => {
   const [articles, setArticles] = useState([]);
-  const [images, setImages] = useState([]);
 
   useEffect(() => {
     fetch("http://portfolio-api/article", {
@@ -19,18 +18,6 @@ const BlogScreen = () => {
   }, []);
 
   console.log(articles);
-
-  useEffect(() => {
-    fetch("http://portfolio-api/image", {
-      method: "GET",
-    })
-      .then((resp) => resp.json())
-      .then((json) => {
-        setImages(json);
-      });
-  }, []);
-
-  console.log(images);
 
   return (
     <main>
