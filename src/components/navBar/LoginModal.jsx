@@ -41,7 +41,7 @@ const LoginModal = (props) => {
       return;
     }
 
-    fetch("http://portfolio-api/app_user", {
+    fetch("http://portfolio-api/auth/login", {
       method: "POST",
       body: JSON.stringify(jsonData),
     })
@@ -50,9 +50,11 @@ const LoginModal = (props) => {
         console.log(json);
         if (json.data?.result) {
           setAuth({ role: +json.data?.role });
+          document.cookie = `blog=${json.data?.token};max-age=${60 * 60 * 1};`;
           navigate("/account");
         } else {
           setAuth({ role: 0 });
+          document.cookie = `blog=null;max-age=0;`;
         }
       });
   };
