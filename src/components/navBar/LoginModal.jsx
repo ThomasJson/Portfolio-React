@@ -5,6 +5,8 @@ import Button from "react-bootstrap/Button";
 import { useNavigate, NavLink } from "react-router-dom";
 import { useState } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
+import { deleteCookie, setCookie } from "../../helpers/cookieHelper";
+import doFetch from "../../helpers/fetchHelper";
 
 const LoginModal = (props) => {
   const { setAuth } = useContext(AuthContext);
@@ -31,7 +33,7 @@ const LoginModal = (props) => {
     return isValid.email === true && isValid.password === true;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
     const jsonData = Object.fromEntries(formData.entries());
@@ -41,22 +43,19 @@ const LoginModal = (props) => {
       return;
     }
 
-    fetch("http://portfolio-api/auth/login", {
+    const { data } = await doFetch("auth/login", {
       method: "POST",
       body: JSON.stringify(jsonData),
-    })
-      .then((resp) => resp.json())
-      .then((json) => {
-        console.log(json);
-        if (json.data?.result) {
-          setAuth({ role: +json.data?.role });
-          document.cookie = `blog=${json.data?.token};max-age=${60 * 60 * 1};`;
-          navigate("/account");
-        } else {
-          setAuth({ role: 0 });
-          document.cookie = `blog=null;max-age=0;`;
-        }
-      });
+    });
+
+    if (data.data?.result) {
+      setAuth({ role: +data.data?.role, id: +data.data?.id });
+      setCookie("blog", data.data?.token, { "max-age": 60 * 60 * 1 });
+      navigate("/account");
+    } else {
+      setAuth({ role: 0, id: 0 });
+      deleteCookie("blog");
+    }
   };
 
   return (
