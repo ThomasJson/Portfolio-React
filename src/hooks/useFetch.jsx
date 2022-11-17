@@ -35,7 +35,7 @@ const useFetch = (endpoint, options = {}) => {
     };
 
     fetchData();
-  }, []); // , [] callback ???
+  }, []);
 
   return { data, loading, error, text };
 };

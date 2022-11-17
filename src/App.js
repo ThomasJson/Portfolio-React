@@ -23,6 +23,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<BaseScreen />}>
+          
           <Route index element={<HomeScreen />} />
           <Route path="/blog" element={<BlogScreen />} />
           <Route path="/contact" element={<ContactScreen />} />

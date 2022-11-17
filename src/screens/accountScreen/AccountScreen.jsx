@@ -6,6 +6,8 @@ import { AuthContext } from "../../contexts/AuthContext";
 
 function AccountScreen() {
   const { auth } = useContext(AuthContext);
+  console.log('auth:', auth);
+  
   const { data, loading, error, text } = useFetch("app_user/" + auth.id);
 
   if (loading) return <div>Loading ...</div>;
@@ -17,8 +19,10 @@ function AccountScreen() {
 
   return (
     <>
-      <h1>AccountScreen</h1>
-      {data && data.mail}
+      <main>
+        <h1>AccountScreen</h1>
+        {data && data?.data.mail}
+      </main>
     </>
   );
 }

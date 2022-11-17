@@ -14,8 +14,10 @@ function AdminScreen() {
 
   return (
     <>
-      <h1>AdminScreen</h1>
-      {data && data.map((item, i) => <div key={i}>{item.mail}</div>)}
+      <main>
+        <h1>AdminScreen</h1>
+        {data && data?.data.map((item, i) => <div key={i}>{item.mail}</div>)}
+      </main>
     </>
   );
 }

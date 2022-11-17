@@ -14,8 +14,10 @@ function LoggedScreen() {
 
   return (
     <>
-      <h1>LoggedScreen ?</h1>
-      {data && data.map((item, i) => <div key={i}>{item.title}</div>)}
+      <main>
+        <h1>LoggedScreen ?</h1>
+        {data && data?.data.map((item, i) => <div key={i}>{item.title}</div>)}
+      </main>
     </>
   );
 }

@@ -9,6 +9,11 @@ import { deleteCookie, setCookie } from "../../helpers/cookieHelper";
 import doFetch from "../../helpers/fetchHelper";
 
 const LoginModal = (props) => {
+
+  // const [show, setShow] = useState(true);
+  // const handleClose = () => setShow(false);
+  // const handleShow = () => setShow(true);
+
   const { setAuth } = useContext(AuthContext);
   const navigate = useNavigate();
 
@@ -19,9 +24,15 @@ const LoginModal = (props) => {
 
     const emailInput = document.getElementById("email-input");
     const emailPattern = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
+
     if (emailPattern.test(emailInput.value)) {
       isValid.email = true;
     }
+
+    // if (!emailPattern.test(emailInput.value)) {
+    //   const infos = document.getElementById('infoWarning');
+    //   infos.classList.add('d-flex');
+    // }
 
     const passwordInput = document.getElementById("password-input");
     const passwordPattern = /^(?=.*[A-Z]).{6,}$/;
@@ -30,8 +41,15 @@ const LoginModal = (props) => {
     }
 
     setValid(isValid);
+
     return isValid.email === true && isValid.password === true;
   };
+
+  // const btn = document.querySelector('.btn-login');
+  // btn.addEventListener('click', () => {
+  //   const infos = document.getElementById('infoWarning');
+  //   infos.classList.add('d-flex');
+  // })
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -50,7 +68,7 @@ const LoginModal = (props) => {
     console.log("data:", data);
 
     if (data?.data?.result) {
-      setAuth({ role: +data.data?.role, id: +data.data?.id });
+      setAuth({ role: +data.data?.role, id: data.data?.id });
       setCookie("blog", data.data?.token, { "max-age": 60 * 60 * 1 });
       navigate("/account");
     } else {
@@ -65,6 +83,7 @@ const LoginModal = (props) => {
       size="lg"
       aria-labelledby="contained-modal-title-vcenter"
       centered
+      // show={show}
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
@@ -79,18 +98,18 @@ const LoginModal = (props) => {
             placeholder="Adresse e-mail"
             name="mail"
           />
-          <i className={"text-danger" + (valid.email ? " d-none" : "")}>
+          {/* <i id="infoWarning" className={"text-danger d-none" + (valid.email ? " d-none" : "")}>
             * Must be a valid email address
-          </i>
+          </i> */}
           <input
             id="password-input"
             type="password"
             placeholder="Mot de passe"
             name="password"
           />
-          <i className={"text-danger" + (valid.password ? " d-none" : "")}>
+          {/* <i className={"text-danger" + (valid.password ? " d-none" : "")}>
             * 6 characters including a capital letter
-          </i>
+          </i> */}
           <Button type="submit" className="btn-login">
             Se connecter
           </Button>
