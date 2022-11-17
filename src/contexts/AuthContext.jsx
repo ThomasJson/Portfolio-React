@@ -10,14 +10,18 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     const check = async () => {
       const { data } = await doFetch("auth/check");
-      if (data.data?.result) {
+
+      if (data?.data?.result) { // data.data?.result ???
         setAuth({ role: +data.data?.role, id: +data.data?.id });
+
       } else {
         setAuth({ role: 0, id: 0 });
         deleteCookie("blog");
       }
+
     };
     check();
+
   }, []);
 
   return (

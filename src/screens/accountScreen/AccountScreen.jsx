@@ -6,7 +6,7 @@ import { AuthContext } from "../../contexts/AuthContext";
 
 function AccountScreen() {
   const { auth } = useContext(AuthContext);
-  const { data, loading, error, text } = useFetch("app_user" + auth.id);
+  const { data, loading, error, text } = useFetch("app_user/" + auth.id);
 
   if (loading) return <div>Loading ...</div>;
 

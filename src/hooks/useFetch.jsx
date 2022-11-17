@@ -20,7 +20,7 @@ const useFetch = (endpoint, options = {}) => {
         const textValue = await resp.text();
         setText(textValue);
         setLoading(false);
-        
+
         try {
           const json = JSON.parse(textValue);
           setData(json);
@@ -35,7 +35,7 @@ const useFetch = (endpoint, options = {}) => {
     };
 
     fetchData();
-  }, []);
+  }, []); // , [] callback ???
 
   return { data, loading, error, text };
 };

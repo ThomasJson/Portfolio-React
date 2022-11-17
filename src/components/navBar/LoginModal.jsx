@@ -47,8 +47,9 @@ const LoginModal = (props) => {
       method: "POST",
       body: JSON.stringify(jsonData),
     });
+    console.log("data:", data);
 
-    if (data.data?.result) {
+    if (data?.data?.result) {
       setAuth({ role: +data.data?.role, id: +data.data?.id });
       setCookie("blog", data.data?.token, { "max-age": 60 * 60 * 1 });
       navigate("/account");
