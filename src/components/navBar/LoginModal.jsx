@@ -72,7 +72,7 @@ const LoginModal = (props) => {
       setCookie("blog", data.data?.token, { "max-age": 60 * 60 * 1 });
       navigate("/account");
     } else {
-      setAuth({ role: 0, id: 0 });
+      setAuth({ role: 0, id: "0" }); // "0" ???
       deleteCookie("blog");
     }
   };

@@ -5,18 +5,18 @@ import doFetch from "../helpers/fetchHelper";
 const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
-  const [auth, setAuth] = useState({ role: 0, id: "0" });
+  const [auth, setAuth] = useState({ role: 0, id: "0" }); 
   console.log('auth:', auth)
 
   useEffect(() => {
     const check = async () => {
       const { data } = await doFetch("auth/check");
 
-      if (data?.data?.result) { // data.data?.result ???
-        setAuth({ role: +data.data?.role, id: +data.data?.id });
+      if (data?.data?.result) { 
+        setAuth({ role: +data.data?.role, id: data.data?.id }); // id: +data ?? NaN
 
       } else {
-        setAuth({ role: 0, id: "0" });
+        setAuth({ role: 0, id: "0" }); 
         deleteCookie("blog");
       }
 
