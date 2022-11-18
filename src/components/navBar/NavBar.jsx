@@ -14,28 +14,29 @@ const NavBar = () => {
   return (
     <>
       <Container fluid className="header">
-        {/* LEFT */}
-        <Container fluid className="nameNav-bloc">
-          <Container fluid className="name">
-            <h1>Tom pearson</h1>
-          </Container>
-        </Container>
 
-        {/* RIGHT */}
+        <h1 className="name">Tom pearson</h1>
+
+        <Nav className="navBar gap-2">
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="/blog">Blog</NavLink>
+          <NavLink to="/contact">Contact</NavLink>
+        </Nav>
+
         <Container fluid className="btn-bloc">
-          <Nav className="navBar gap-2">
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="/blog">Blog</NavLink>
-            <NavLink to="/contact">Contact</NavLink>
-          </Nav>
-
           <Container fluid className="login-bloc">
-            <Button className="btn-spacing btn-login" onClick={() => setModalLogin(true)}>
+            <Button
+              className="btn-spacing btn-login"
+              onClick={() => setModalLogin(true)}
+            >
               <BiLogInCircle />
             </Button>
             <LoginModal show={modalLogin} onHide={() => setModalLogin(false)} />
 
-            <Button className="btn-spacing btn-register" onClick={() => setModalRegister(true)}>
+            <Button
+              className="btn-spacing btn-register"
+              onClick={() => setModalRegister(true)}
+            >
               <BiUserPlus />
             </Button>
             <RegisterModal
@@ -45,7 +46,6 @@ const NavBar = () => {
           </Container>
 
           <OffCanvas placement={"end"} />
-          
         </Container>
       </Container>
     </>

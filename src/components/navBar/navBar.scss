@@ -4,32 +4,29 @@
     height: 10vh !important;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-between !important;
     align-items: center;
     
     background-color: #242526 !important;
 }
 
 // ---------------------------------------------------------- LEFT BLOC -------------------------------------------------------------------
-.nameNav-bloc {
-    padding: 0px !important;
-    display: flex;
-    flex-direction: row;
-}
 .name {
-    width: auto;
+    min-width: 220px;
     padding: 0px !important;
+    margin: 0px !important;
     margin-left: 8px !important;
     color: white;
 }
 
-// ---------------------------------------------------------- RIGHT BLOC -------------------------------------------------------------------
+// ---------------------------------------------------------- CENTER BLOC -------------------------------------------------------------------
+
 .navBar {
-    display: flex;
-    flex-direction: row;
+    width: 220px !important;
+    display: flex !important;
+    flex-direction: row !important;
     justify-content: space-between;
     align-items: center;
-    margin-right: 8px !important;
 }
 .navBar a:hover {
     border-bottom: 1px solid white !important;
@@ -37,8 +34,13 @@
 .navBar a:focus {
     border-bottom: 1px solid white !important;
 }
+
+// ---------------------------------------------------------- RIGHT BLOC -------------------------------------------------------------------
+
 .btn-bloc {
     padding: 0px !important;
+    margin: 0px !important;
+    max-width: 220px;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
