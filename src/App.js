@@ -15,6 +15,7 @@ import UserScreen from "./screens/userScreen/UserScreen";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle";
 import { AuthContext } from "./contexts/AuthContext";
+import AccountValidateScreen from "./screens/accountValidateScreen/AccountValidateScreen";
 
 function App() {
   const { auth } = useContext(AuthContext);
@@ -35,6 +36,8 @@ function App() {
           )}
 
           {auth.role > 0 && <Route path="/logged" element={<UserScreen />} />}
+
+          {auth.role === 0 && <Route path="/account/validate/:token" element={<AccountValidateScreen />} />}
         </Route>
       </Routes>
     </BrowserRouter>

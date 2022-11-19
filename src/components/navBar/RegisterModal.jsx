@@ -1,9 +1,10 @@
 import "./registerModal.scss";
-import React from "react";
+import React, {useState} from "react";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import { Container } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import doFetch from "../../helpers/fetchHelper";
 
 const RegisterModal = (props) => {
   const {
@@ -14,7 +15,17 @@ const RegisterModal = (props) => {
 
   const formInvalid = () => console.log("Erros", errors);
 
-  const formSubmit = (data) => console.log("Validated Data", data);
+  const [msg, setMsg] = useState("");
+  const formSubmit = async (formData) => {
+
+    //console.log("Validated Data", formData);
+    const {data} = await doFetch("auth/register", {
+      method: "POST",
+      body: JSON.stringify(formData),
+    });
+    console.log(data)
+    setMsg(data.message)
+  }
 
   return (
     <Modal
@@ -38,7 +49,6 @@ const RegisterModal = (props) => {
               type="text"
               placeholder="Prénom"
               name="firstName"
-              {...register("Prénom", { required: true, minLength: 3 })}
             />
             <input
               className="input-spacing mb-3"
@@ -50,9 +60,16 @@ const RegisterModal = (props) => {
           <input
             className="mb-3"
             type="text"
+            placeholder="Pseudo"
+            name="pseudo"
+            {...register("pseudo", { required: true, minLength: 3 })}
+          />
+          <input
+            className="mb-3"
+            type="email"
             placeholder="Adresse e-mail"
-            name="email"
-            {...register("email", { required: true, pattern: /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/i })}
+            name="mail"
+            {...register("mail", { required: true, pattern: /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/i })}
           />
           {/* <input
             className="mb-3"
