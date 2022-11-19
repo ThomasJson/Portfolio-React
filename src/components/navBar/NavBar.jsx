@@ -15,13 +15,15 @@ const NavBar = () => {
     <>
       <Container fluid className="header">
 
-        <h1 className="name">Tom pearson</h1>
+        <Container className="name-nav gap-4">
+        <h2 className="name">Tom pearson</h2>
 
-        <Nav className="navBar gap-2">
+        <Nav className="navBar gap-4">
           <NavLink to="/">Home</NavLink>
           <NavLink to="/blog">Blog</NavLink>
           <NavLink to="/contact">Contact</NavLink>
         </Nav>
+        </Container>
 
         <Container fluid className="btn-bloc">
           <Container fluid className="login-bloc">

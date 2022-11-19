@@ -52,11 +52,11 @@ h1 {
 }
 
 // ---------------------------------------- MEDIA QUERIES ----------------------------------------------------
-@media screen and (max-width: 520px) {
+@media screen and (max-width: 560px) {
   #burger-menu {
     display: block !important;
   }
-  .navBar {
+  .navBar.gap-4.nav {
     display: none !important;
   }
   .blog-container {
