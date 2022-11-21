@@ -13,10 +13,10 @@ const AuthProvider = ({ children }) => {
       const { data } = await doFetch("auth/check");
 
       if (data?.data?.result) { 
-        setAuth({ role: +data.data?.role, id: data.data?.id }); // id: +data ?? NaN
+        setAuth({ role: +data.data?.role, id: data.data?.id });
 
       } else {
-        setAuth({ role: 0, id: "0" }); 
+        setAuth({ role: 0, id: "0" });
         deleteCookie("blog");
       }
 
