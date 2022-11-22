@@ -8,8 +8,9 @@ import useFetch from "../../hooks/useFetch";
 const BlogScreen = () => {
   // const [articles, setArticles] = useState([]);
   // useEffect(() => {
-  //   fetch("http://portfolio-api/article", {
-  //     method: "GET",
+  //   fetch("http://portfolio-api/article/0", {
+  //     method: "POST",
+  //     body: JSON.stringify({with:['image']})
   //   })
   //     .then((resp) => resp.json())
   //     .then((json) => {
@@ -19,7 +20,10 @@ const BlogScreen = () => {
 
   // console.log(articles);
 
-  const { data, loading, error, text } = useFetch("article");
+  const { data, loading, error, text } = useFetch("article/0", {
+    method: "POST",
+    body: JSON.stringify({with:['image']})
+  });
 
   if (loading) return <div>Loading ...</div>;
 
