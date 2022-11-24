@@ -19,6 +19,7 @@ const BlogScreen = () => {
     return <div>Error ! </div>;
   }
   console.log("data:", data);
+  
   return (
     <main>
       {data &&
