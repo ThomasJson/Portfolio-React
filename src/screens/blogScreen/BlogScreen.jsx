@@ -32,6 +32,7 @@ const BlogScreen = () => {
                 onClick={() => {
                   navigate(`/article/${article.Id_article}`);
                 }}
+                className="article-spacing"
               >
                 <Article
                   title={article.title}
