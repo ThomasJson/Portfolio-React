@@ -14,11 +14,14 @@ const NavBar = () => {
   const [modalLogin, setModalLogin] = React.useState(false);
 
   const { auth } = useContext(AuthContext);
+  
 
   const { data, loading, error, text } = useFetch("app_user/" + auth.id, {
     method: "POST",
     body: JSON.stringify({ with: ["account"] }),
   });
+  
+  console.log('auth:', auth)
 
   // if (loading) return <div>Loading ...</div>;
 
