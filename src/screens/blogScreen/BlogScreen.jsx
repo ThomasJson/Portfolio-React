@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 const BlogScreen = () => {
   const navigate = useNavigate();
 
-  const { data, loading, error, text } = useFetch("article/0", {
+  const { data, loading, error, text } = useFetch("article/*", {
     method: "POST",
     body: JSON.stringify({ with: ["image", "category"] }),
   });
@@ -19,7 +19,7 @@ const BlogScreen = () => {
     return <div>Error ! </div>;
   }
   console.log("data:", data);
-  
+
   return (
     <main>
       {data &&
