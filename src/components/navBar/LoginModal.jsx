@@ -9,16 +9,11 @@ import { deleteCookie, setCookie } from "../../helpers/cookieHelper";
 import doFetch from "../../helpers/fetchHelper";
 
 const LoginModal = (props) => {
-
-  // const [show, setShow] = useState(true);
-  // const handleClose = () => setShow(false);
-  // const handleShow = () => setShow(true);
-
   const { setAuth } = useContext(AuthContext);
-  
-  const navigate = useNavigate();
-
   const [valid, setValid] = useState({ email: false, password: false });
+  console.log('valid:', valid)
+
+  const navigate = useNavigate();
 
   const validForm = (jsonData) => {
     const isValid = { email: false, password: false };
@@ -30,10 +25,19 @@ const LoginModal = (props) => {
       isValid.email = true;
     }
 
+    ///////////////////////////////////////////////////////////////////////////
+
     // if (!emailPattern.test(emailInput.value)) {
     //   const infos = document.getElementById('infoWarning');
     //   infos.classList.add('d-flex');
     // }
+
+    // emailInput.addEventListener("change", () => {
+    //   const infos = document.getElementById("infoWarning");
+    //   infos.classList.add("d-flex");
+    // });
+
+    ///////////////////////////////////////////////////////////////////////////
 
     const passwordInput = document.getElementById("password-input");
     const passwordPattern = /^(?=.*[A-Z]).{6,}$/;
@@ -45,12 +49,6 @@ const LoginModal = (props) => {
 
     return isValid.email === true && isValid.password === true;
   };
-
-  // const btn = document.querySelector('.btn-login');
-  // btn.addEventListener('click', () => {
-  //   const infos = document.getElementById('infoWarning');
-  //   infos.classList.add('d-flex');
-  // })
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -72,10 +70,7 @@ const LoginModal = (props) => {
       setAuth({ role: +data.data?.role, id: data.data?.id });
       setCookie("blog", data.data?.token, { "max-age": 60 * 60 * 24 });
       navigate("/account");
-
-      // window.location.reload();
       window.history.go();
-      
     } else {
       setAuth({ role: 0, id: "0" });
       deleteCookie("blog");
@@ -88,7 +83,6 @@ const LoginModal = (props) => {
       size="lg"
       aria-labelledby="contained-modal-title-vcenter"
       centered
-      // show={show}
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
@@ -96,25 +90,27 @@ const LoginModal = (props) => {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <form onSubmit={handleSubmit} className="coL gap-3 mb-2" noValidate>
+        <form onSubmit={handleSubmit} className="coL mb-2" noValidate>
           <input
             id="email-input"
             type="email"
             placeholder="Adresse e-mail"
             name="mail"
+            className="input-style"
           />
-          {/* <i id="infoWarning" className={"text-danger d-none" + (valid.email ? " d-none" : "")}>
-            * Must be a valid email address
-          </i> */}
+          <i className={"infos text-danger" + (valid.email ? " d-none" : "")}>
+            Une adresse email valide est requise
+          </i>
           <input
             id="password-input"
             type="password"
             placeholder="Mot de passe"
             name="password"
+            className="input-style"
           />
-          {/* <i className={"text-danger" + (valid.password ? " d-none" : "")}>
-            * 6 characters including a capital letter
-          </i> */}
+          <i className={"infos text-danger" + (valid.password ? " d-none" : "")}>
+            6 charactères dont une lettre majuscule
+          </i>
           <Button type="submit" className="btn-login">
             Se connecter
           </Button>

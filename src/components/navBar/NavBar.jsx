@@ -15,21 +15,12 @@ const NavBar = () => {
 
   const { auth } = useContext(AuthContext);
   
-
-  const { data, loading, error, text } = useFetch("app_user/" + auth.id, {
+  const { data } = useFetch("app_user/" + auth.id, {
     method: "POST",
     body: JSON.stringify({ with: ["account"] }),
   });
   
-  console.log('auth:', auth)
-
-  // if (loading) return <div>Loading ...</div>;
-
-  // if (error) {
-  //   console.log(error, text);
-  //   return <div>Error ! </div>;
-  // }
-
+  console.log('auth:', auth);
   console.log("data:", data);
 
   return (

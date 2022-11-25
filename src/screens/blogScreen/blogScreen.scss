@@ -1,4 +1,11 @@
-.blog-container {
+.blog-container.container-fluid {
+    margin: 0px 0px 0px 0px !important;
+    width: 100% !important;
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.article-spacing {
+    margin: 10px;
 }
