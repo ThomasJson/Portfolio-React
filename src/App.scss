@@ -70,6 +70,12 @@ input {
     padding-left: 10px !important;
     padding-right: 10px !important;
   }
+  .image-content-bloc {
+    flex-direction: column !important;
+  }
+  .content {
+    margin-left: 0px !important;
+  }
   img.img-spacing {
     width: 100% !important;
   }

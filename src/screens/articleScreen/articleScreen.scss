@@ -1,3 +1,19 @@
+h2 {
+    color: white;
+    font-weight: bold;
+}
+.image-content-bloc {
+    margin: 0px !important;
+    display: flex;
+    flex-direction: row;
+}
 .img-spacing {
     width: 500px !important;
+}
+.content {
+    margin-left: 10px;
+    color: white;
+}
+.comments-bloc {
+    margin: 0px !important;
 }

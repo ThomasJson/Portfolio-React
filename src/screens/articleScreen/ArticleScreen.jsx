@@ -43,25 +43,26 @@ const ArticleScreen = () => {
     <>
       <main>
         <Container fluid className="singleArticle-container">
-          <h1 className={data.data[0]?.with[1]?.title}>{data.data[0]?.with[1]?.title}</h1>
+          <h1 className={data.data[0]?.with[1]?.title}>
+            {data.data[0]?.with[1]?.title}
+          </h1>
           <h2>{data.data[0]?.title}</h2>
-          <img
-            src={data.data[0]?.with[0]?.src}
-            alt={data.data[0]?.with[0]?.alt}
-            className="img-spacing"
-          />
-          <p>{data.data[0]?.content}</p>
+          <Container className="image-content-bloc">
+            <img
+              src={data.data[0]?.with[0]?.src}
+              alt={data.data[0]?.with[0]?.alt}
+              className="img-spacing"
+            />
+            <p className="content">{data.data[0]?.content}</p>
+          </Container>
         </Container>
-        <Container>
+        <Container fluid className="comments-bloc">
           {comments?.data.map((comment) => {
-          console.log('comment:', comment)
+            console.log("comment:", comment);
 
-            if(comment.Id_article === id) {
-              return (
-                <h3>{comment.content}</h3>
-              )
+            if (comment.Id_article === id) {
+              return <h3>{comment.content}</h3>;
             }
-
           })}
         </Container>
       </main>
