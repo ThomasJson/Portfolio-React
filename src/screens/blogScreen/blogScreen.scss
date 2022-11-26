@@ -1,11 +1,28 @@
 .blog-container.container-fluid {
     margin: 0px 0px 0px 0px !important;
+    padding-left: 100px;
+    padding-right: 100px;
     width: 100% !important;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     flex-wrap: wrap;
 }
-.article-spacing {
+.article-spacing:hover {
+    cursor: pointer;
+}
+.article-spacing.Gaming {
+    border: 1px solid #404040 !important;
+    border-top-color: red !important;
+    margin: 10px;
+}
+.article-spacing.Développement {
+    border: 1px solid #404040 !important;
+    border-top-color: blue !important;
+    margin: 10px;
+}
+.article-spacing.Business {
+    border: 1px solid #404040 !important;
+    border-top-color: yellow !important;
     margin: 10px;
 }

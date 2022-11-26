@@ -63,10 +63,15 @@ input {
   .navBar.gap-4.nav {
     display: none !important;
   }
-  .blog-container {
+  .blog-container.container-fluid {
     display: flex;
     flex-direction: column !important;
     align-items: center !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+  img.img-spacing {
+    width: 100% !important;
   }
 }
 
