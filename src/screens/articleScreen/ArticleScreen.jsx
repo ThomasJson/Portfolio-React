@@ -9,11 +9,11 @@ import { AuthContext } from "../../contexts/AuthContext";
 const ArticleScreen = () => {
   const { id } = useParams();
   const [comments, setComments] = useState(null);
-  
+
   const [pseudo, setPseudo] = useState(null);
-  console.log('pseudo:', pseudo)
-  const {auth} = useContext(AuthContext)
-  console.log('auth:', auth)
+  console.log("pseudo:", pseudo);
+  const { auth } = useContext(AuthContext);
+  console.log("auth:", auth);
 
   useEffect(() => {
     fetch("http://portfolio-api/comment/*", {
@@ -80,8 +80,8 @@ const ArticleScreen = () => {
           </Container>
         </Container>
         <Container fluid className="comments-bloc">
+          
           {comments?.data.map((comment) => {
-
             console.log("comment:", comment);
 
             if (comment.Id_article === id) {
@@ -96,6 +96,13 @@ const ArticleScreen = () => {
               );
             }
           })}
+
+          {auth.role > 0 && (
+            <Container fluid className="comment-container">
+              {pseudo?.data[0].with[0].pseudo}
+            </Container>
+          )}
+
         </Container>
       </main>
     </>
