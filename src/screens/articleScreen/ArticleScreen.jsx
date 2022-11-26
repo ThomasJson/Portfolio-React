@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
 import { Container } from "react-bootstrap";
+import Comment from "../../components/comment/Comment";
 
 const ArticleScreen = () => {
   const { id } = useParams();
@@ -58,10 +59,19 @@ const ArticleScreen = () => {
         </Container>
         <Container fluid className="comments-bloc">
           {comments?.data.map((comment) => {
+
             console.log("comment:", comment);
 
             if (comment.Id_article === id) {
-              return <h3>{comment.content}</h3>;
+              return (
+                <div key={comment.Id_comment}>
+                  <Comment
+                    content={comment.content}
+                    author={comment?.with[0].pseudo}
+                    date={comment.created_at}
+                  />
+                </div>
+              );
             }
           })}
         </Container>
