@@ -32,7 +32,7 @@ const BlogScreen = () => {
                 onClick={() => {
                   navigate(`/article/${article.Id_article}`);
                 }}
-                className="article-spacing"
+                className={"article-spacing " + (article.with[1]?.title)}
               >
                 <Article
                   title={article.title}
