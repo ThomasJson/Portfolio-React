@@ -41,7 +41,7 @@ const NavBar = () => {
 
             {auth.role > 0 && (
               <Button className="btn-spacing">
-                {data?.data[0]?.with[0]?.pseudo}
+                {data?.data[0].with[0].pseudo}
               </Button>
             )}
 

@@ -1,13 +1,19 @@
 import "./articleScreen.scss";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
 import { Container } from "react-bootstrap";
 import Comment from "../../components/comment/Comment";
+import { AuthContext } from "../../contexts/AuthContext";
 
 const ArticleScreen = () => {
   const { id } = useParams();
   const [comments, setComments] = useState(null);
+  
+  const [pseudo, setPseudo] = useState(null);
+  console.log('pseudo:', pseudo)
+  const {auth} = useContext(AuthContext)
+  console.log('auth:', auth)
 
   useEffect(() => {
     fetch("http://portfolio-api/comment/*", {
@@ -25,7 +31,23 @@ const ArticleScreen = () => {
       });
   }, []);
   console.log("comments:", comments);
-  // Fetch Article
+
+  useEffect(() => {
+    fetch("http://portfolio-api/app_user/" + auth.id, {
+      method: "POST",
+      body: JSON.stringify({
+        with: ["account"],
+      }),
+    })
+      .then((resp) => {
+        return resp.json();
+      })
+
+      .then((json) => {
+        setPseudo(json);
+      });
+  }, []);
+  console.log("comments:", comments);
 
   const { data, loading, error, text } = useFetch("article/" + id, {
     method: "POST",
