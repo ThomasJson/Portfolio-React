@@ -3,11 +3,12 @@ import React from "react";
 import { useContext } from "react";
 import useFetch from "../../hooks/useFetch";
 import { AuthContext } from "../../contexts/AuthContext";
+import { deleteCookie } from "../../helpers/cookieHelper";
+import { Button } from "react-bootstrap";
 
 function AccountScreen() {
-  const { auth } = useContext(AuthContext);
-  console.log('auth:', auth);
-  
+  const { auth, setAuth } = useContext(AuthContext);
+
   const { data, loading, error, text } = useFetch("app_user/" + auth.id);
 
   if (loading) return <div>Loading ...</div>;
@@ -21,7 +22,18 @@ function AccountScreen() {
     <>
       <main>
         <h1>AccountScreen</h1>
-        {data && data?.data.mail}
+        {auth.role > 0 && (
+          <Button
+            className="btn btn-primary"
+            onClick={(e) => {
+              setAuth({ role: 0, id: 0 });
+              deleteCookie("blog");
+              window.location.href = "/";
+            }}
+          >
+            Log out
+          </Button>
+        )}
       </main>
     </>
   );

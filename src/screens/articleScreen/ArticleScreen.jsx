@@ -12,6 +12,7 @@ const ArticleScreen = () => {
 
   const [pseudo, setPseudo] = useState(null);
   console.log("pseudo:", pseudo);
+  
   const { auth } = useContext(AuthContext);
   console.log("auth:", auth);
 
@@ -30,7 +31,6 @@ const ArticleScreen = () => {
         setComments(json);
       });
   }, []);
-  console.log("comments:", comments);
 
   useEffect(() => {
     fetch("http://portfolio-api/app_user/" + auth.id, {
@@ -47,7 +47,6 @@ const ArticleScreen = () => {
         setPseudo(json);
       });
   }, []);
-  console.log("comments:", comments);
 
   const { data, loading, error, text } = useFetch("article/" + id, {
     method: "POST",
@@ -60,7 +59,6 @@ const ArticleScreen = () => {
     console.log(error, text);
     return <div>Error !</div>;
   }
-  console.log("data:", data);
 
   return (
     <>
@@ -82,7 +80,6 @@ const ArticleScreen = () => {
         <Container fluid className="comments-bloc">
           
           {comments?.data.map((comment) => {
-            console.log("comment:", comment);
 
             if (comment.Id_article === id) {
               return (

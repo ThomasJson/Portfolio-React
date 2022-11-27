@@ -12,7 +12,6 @@ import ArticleScreen from "./screens/articleScreen/ArticleScreen";
 
 import AdminScreen from "./screens/adminScreen/AdminScreen";
 import AccountScreen from "./screens/accountScreen/AccountScreen";
-import UserScreen from "./screens/userScreen/UserScreen";
 import AccountValidateScreen from "./screens/accountValidateScreen/AccountValidateScreen";
 
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -36,8 +35,6 @@ function App() {
           {auth.role > 0 && (
             <Route path="/account" element={<AccountScreen />} />
           )}
-
-          {auth.role > 0 && <Route path="/logged" element={<UserScreen />} />}
 
           {auth.role === 0 && <Route path="/account/validate/:token" element={<AccountValidateScreen />} />}
         </Route>

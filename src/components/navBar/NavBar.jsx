@@ -14,13 +14,13 @@ const NavBar = () => {
   const [modalLogin, setModalLogin] = React.useState(false);
 
   const { auth } = useContext(AuthContext);
-  
+
   const { data } = useFetch("app_user/" + auth.id, {
     method: "POST",
     body: JSON.stringify({ with: ["account"] }),
   });
-  
-  console.log('auth:', auth);
+
+  console.log("auth:", auth);
   console.log("data:", data);
 
   return (
@@ -30,6 +30,11 @@ const NavBar = () => {
           <h2 className="name">Tom pearson</h2>
 
           <Nav className="navBar gap-4">
+            {auth.role === 4 && (
+              <NavLink to="/admin" className="me-2">
+                Admin
+              </NavLink>
+            )}
             <NavLink to="/">Home</NavLink>
             <NavLink to="/blog">Blog</NavLink>
             <NavLink to="/contact">Contact</NavLink>
@@ -38,11 +43,13 @@ const NavBar = () => {
 
         <Container fluid className="btn-bloc">
           <Container fluid className="login-bloc">
-
+            
             {auth.role > 0 && (
-              <Button className="btn-spacing">
-                {data?.data[0].with[0].pseudo}
-              </Button>
+              <NavLink to="/account">
+                <Button className="btn-spacing">
+                  {data?.data[0]?.with[0].pseudo}
+                </Button>
+              </NavLink>
             )}
 
             {auth.role < 1 && (
