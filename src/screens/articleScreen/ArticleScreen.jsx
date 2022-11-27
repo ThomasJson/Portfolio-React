@@ -72,9 +72,12 @@ const ArticleScreen = () => {
     const jsonData = Object.fromEntries(formData.entries());
     console.log(jsonData);
 
+    const items = [];
+    const assocArray = {"content": jsonData}
+
     const { data } = await doFetch("comment", {
       method: "PUT",
-      body: JSON.stringify(jsonData),
+      body: JSON.stringify([items[assocArray]]),
     });
 
     console.log("data:", data);
