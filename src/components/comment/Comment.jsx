@@ -7,8 +7,7 @@ const Comment = ({ content, author, date }) => {
     <>
       <Container fluid className="comment-container">
         <Container>{author}</Container>
-        <Container>{content}</Container>
-        <Container>{date}</Container>
+        <Container fluid className="comment-content">{content}</Container>
       </Container>
     </>
   );

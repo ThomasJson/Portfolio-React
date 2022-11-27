@@ -11,7 +11,7 @@ import doFetch from "../../helpers/fetchHelper";
 const LoginModal = (props) => {
   const { setAuth } = useContext(AuthContext);
   const [valid, setValid] = useState({ email: false, password: false });
-  console.log('valid:', valid)
+  // console.log('valid:', valid)
 
   const navigate = useNavigate();
 

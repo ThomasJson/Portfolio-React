@@ -31,7 +31,7 @@ const NavBar = () => {
 
           <Nav className="navBar gap-4">
             {auth.role === 4 && (
-              <NavLink to="/admin" className="me-2">
+              <NavLink to="/admin">
                 Admin
               </NavLink>
             )}
@@ -43,7 +43,7 @@ const NavBar = () => {
 
         <Container fluid className="btn-bloc">
           <Container fluid className="login-bloc">
-            
+
             {auth.role > 0 && (
               <NavLink to="/account">
                 <Button className="btn-spacing">

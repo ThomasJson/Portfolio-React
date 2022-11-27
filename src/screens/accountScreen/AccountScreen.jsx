@@ -9,7 +9,10 @@ import { Button } from "react-bootstrap";
 function AccountScreen() {
   const { auth, setAuth } = useContext(AuthContext);
 
-  const { data, loading, error, text } = useFetch("app_user/" + auth.id);
+  const { data, loading, error, text } = useFetch("app_user/" + auth.id, {
+    method: "POST",
+    body: JSON.stringify({ with: ["account"] }),
+  });
 
   if (loading) return <div>Loading ...</div>;
 
@@ -17,6 +20,8 @@ function AccountScreen() {
     console.log(error, text);
     return <div>Error ! </div>;
   }
+  
+  console.log('data:', data)
 
   return (
     <>
