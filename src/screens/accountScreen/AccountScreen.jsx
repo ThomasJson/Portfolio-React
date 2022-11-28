@@ -4,7 +4,7 @@ import { useContext } from "react";
 import useFetch from "../../hooks/useFetch";
 import { AuthContext } from "../../contexts/AuthContext";
 import { deleteCookie } from "../../helpers/cookieHelper";
-import { Button } from "react-bootstrap";
+import { Button, Container } from "react-bootstrap";
 
 function AccountScreen() {
   const { auth, setAuth } = useContext(AuthContext);
@@ -20,25 +20,27 @@ function AccountScreen() {
     console.log(error, text);
     return <div>Error ! </div>;
   }
-  
-  console.log('data:', data)
+
+  console.log("data:", data);
 
   return (
     <>
       <main>
-        <h1>AccountScreen</h1>
-        {auth.role > 0 && (
-          <Button
-            className="btn btn-primary"
-            onClick={(e) => {
-              setAuth({ role: 0, id: 0 });
-              deleteCookie("blog");
-              window.location.href = "/";
-            }}
-          >
-            Log out
-          </Button>
-        )}
+        <Container fluid>
+          <h1>AccountScreen</h1>
+          {auth.role > 0 && (
+            <Button
+              className="btn btn-primary"
+              onClick={(e) => {
+                setAuth({ role: 0, id: 0 });
+                deleteCookie("blog");
+                window.location.href = "/";
+              }}
+            >
+              Log out
+            </Button>
+          )}
+        </Container>
       </main>
     </>
   );

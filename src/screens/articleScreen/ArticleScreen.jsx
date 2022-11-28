@@ -11,12 +11,15 @@ const ArticleScreen = () => {
   const { id } = useParams();
 
   const [comments, setComments] = useState(null);
-  const [pseudo, setPseudo] = useState(null);
-  const [article, setArticle] = useState(null);
 
+  const [pseudo, setPseudo] = useState(null);
+  console.log('pseudo:', pseudo)
+
+  const [article, setArticle] = useState(null);
   console.log('article:', article)
   
   const { auth } = useContext(AuthContext);
+  console.log('auth:', auth)
 
   useEffect(() => {
     fetch("http://portfolio-api/comment/*", {
@@ -48,7 +51,7 @@ const ArticleScreen = () => {
       .then((json) => {
         setPseudo(json);
       });
-  }, []);
+  }, [auth]);
 
   useEffect(() => {
     fetch("http://portfolio-api/article/" + id, {
@@ -68,16 +71,25 @@ const ArticleScreen = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const formData = new FormData(e.target);
-    const jsonData = Object.fromEntries(formData.entries());
-    console.log(jsonData);
+    const value = document.getElementById('com-input').value;
+    console.log('value:', value)
 
-    const items = [];
-    const assocArray = {"content": jsonData}
+    const date = new Date().toLocaleDateString();
+    console.log('date:', date)
 
     const { data } = await doFetch("comment", {
       method: "PUT",
-      body: JSON.stringify([items[assocArray]]),
+      body: JSON.stringify(
+        {"items": 
+          [
+            {
+              "content": value,
+              "Id_article": id,
+              "Id_account": pseudo?.data[0]?.with[0]?.Id_account,
+              "created_at": date
+            }
+          ]
+        }),
     });
 
     console.log("data:", data);
@@ -108,7 +120,7 @@ const ArticleScreen = () => {
                 <div key={comment.Id_comment}>
                   <Comment
                     content={comment.content}
-                    author={comment?.with[0].pseudo}
+                    author={comment?.with[0]?.pseudo}
                     date={new Date(comment.created_at).toLocaleDateString()}
                   />
                 </div>
@@ -121,7 +133,7 @@ const ArticleScreen = () => {
             onSubmit={handleSubmit}
             >
               <Container fluid className="comment-container">
-                {pseudo?.data[0].with[0].pseudo}
+                {pseudo?.data[0]?.with[0]?.pseudo}
                 <Container fluid className="comment-content">
                   <input
                     id="com-input"
