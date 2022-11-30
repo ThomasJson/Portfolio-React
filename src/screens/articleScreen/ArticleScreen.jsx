@@ -74,7 +74,8 @@ const ArticleScreen = () => {
     const value = document.getElementById('com-input').value;
     console.log('value:', value)
 
-    const date = new Date().toLocaleDateString();
+    const date = new Date().toLocaleString();
+    // .replace(",","").replace(/:.. /," ");
     console.log('date:', date)
 
     const { data } = await doFetch("comment", {
@@ -121,7 +122,7 @@ const ArticleScreen = () => {
                   <Comment
                     content={comment.content}
                     author={comment?.with[0]?.pseudo}
-                    date={new Date(comment.created_at).toLocaleDateString()}
+                    date={comment.created_at}
                   />
                 </div>
               );
