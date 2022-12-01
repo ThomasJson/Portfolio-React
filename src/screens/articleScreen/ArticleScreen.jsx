@@ -72,12 +72,14 @@ const ArticleScreen = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const value = document.getElementById('com-input').value;
-    console.log('value:', value)
 
-    const date = new Date().toLocaleString();
-    // .replace(",","").replace(/:.. /," ");
-    console.log('date:', date)
-
+    function formatDate(date) {
+      var year = date.getFullYear().toString();
+      var month = (date.getMonth() + 101).toString().substring(1);
+      var day = (date.getDate() + 100).toString().substring(1);
+      return day + "-" + month + "-" + year;
+    }
+    
     const { data } = await doFetch("comment", {
       method: "PUT",
       body: JSON.stringify(
@@ -87,7 +89,7 @@ const ArticleScreen = () => {
               "content": value,
               "Id_article": id,
               "Id_account": pseudo?.data[0]?.with[0]?.Id_account,
-              "created_at": date
+              "created_at": formatDate(new Date())
             }
           ]
         }),
