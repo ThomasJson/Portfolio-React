@@ -1,24 +1,29 @@
 import "./adminScreen.scss";
 import React from "react";
-import useFetch from "../../hooks/useFetch";
 import { Container } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 
 function AdminScreen() {
-
-  const { data, loading, error, text } = useFetch("app_user");
-  if (loading) return <div>Loading ...</div>;
-  
-  if (error) {
-    console.log(error, text);
-    return <div>Error ! </div>;
-  }
 
   return (
     <>
       <main>
-        <Container fluid>
-          <h1>AdminScreen</h1>
-          {data && data?.data.map((item, i) => <div key={i}>{item.mail}</div>)}
+        <Container fluid className="admin-bloc">
+          <h1 className="admin-title">👑 God Mode 👑</h1>
+
+          <Container fluid className="admin-nav">
+            <button className="btn-spacing btn btn-primary">
+              Gestion des Utilisateurs
+            </button>
+            <NavLink to="/admin/modifArticle">
+              <button className="btn-spacing btn btn-primary">
+                Créer un Article
+              </button>
+            </NavLink>
+            <button className="btn-spacing btn btn-primary">
+              Modération des Coms
+            </button>
+          </Container>
         </Container>
       </main>
     </>

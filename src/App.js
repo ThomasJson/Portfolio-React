@@ -16,6 +16,7 @@ import AccountValidateScreen from "./screens/accountValidateScreen/AccountValida
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle";
+import AdminArticle from "./screens/adminScreen/adminArticle/AdminArticle";
 
 function App() {
   const { auth } = useContext(AuthContext);
@@ -31,6 +32,8 @@ function App() {
           <Route path="/article/:id" element={<ArticleScreen />} />
 
           {auth.role === 4 && <Route path="/admin" element={<AdminScreen />} />}
+
+          {auth.role === 4 && <Route path="/admin/modifArticle" element={<AdminArticle />} />}
 
           {auth.role > 0 && (
             <Route path="/account" element={<AccountScreen />} />
