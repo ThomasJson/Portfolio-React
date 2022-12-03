@@ -17,7 +17,7 @@ function AdminScreen() {
             </button>
             <NavLink to="/admin/modifArticle">
               <button className="btn-spacing btn btn-primary">
-                Créer un Article
+                Gestion des Articles
               </button>
             </NavLink>
             <button className="btn-spacing btn btn-primary">

@@ -13,13 +13,13 @@ const ArticleScreen = () => {
   const [comments, setComments] = useState(null);
 
   const [pseudo, setPseudo] = useState(null);
-  console.log('pseudo:', pseudo)
+  console.log("pseudo:", pseudo);
 
   const [article, setArticle] = useState(null);
-  console.log('article:', article)
-  
+  console.log("article:", article);
+
   const { auth } = useContext(AuthContext);
-  console.log('auth:', auth)
+  console.log("auth:", auth);
 
   useEffect(() => {
     fetch("http://portfolio-api/comment/*", {
@@ -71,7 +71,7 @@ const ArticleScreen = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const value = document.getElementById('com-input').value;
+    const value = document.getElementById("com-input").value;
 
     function formatDate(date) {
       var year = date.getFullYear().toString();
@@ -79,40 +79,43 @@ const ArticleScreen = () => {
       var day = (date.getDate() + 100).toString().substring(1);
       return day + "-" + month + "-" + year;
     }
-    
+
     const { data } = await doFetch("comment", {
       method: "PUT",
-      body: JSON.stringify(
-        {"items": 
-          [
-            {
-              "content": value,
-              "Id_article": id,
-              "Id_account": pseudo?.data[0]?.with[0]?.Id_account,
-              "created_at": formatDate(new Date())
-            }
-          ]
-        }),
+      body: JSON.stringify({
+        items: [
+          {
+            content: value,
+            Id_article: id,
+            Id_account: pseudo?.data[0]?.with[0]?.Id_account,
+            created_at: formatDate(new Date()),
+          },
+        ],
+      }),
     });
 
     console.log("data:", data);
-  }
+  };
 
   return (
     <>
       <main>
         <Container fluid className="singleArticle-container">
-          <h1 className={article?.data[0]?.with[1]?.title}>
-            {article?.data[0]?.with[1]?.title}
-          </h1>
-          <h2>{article?.data[0]?.title}</h2>
-          <Container className="image-content-bloc">
-            <img
-              src={article?.data[0]?.with[0]?.src}
-              alt={article?.data[0]?.with[0]?.alt}
-              className="img-spacing"
-            />
-            <p className="content">{article?.data[0]?.content}</p>
+          <Container fluid className="article-bg">
+
+            <h1 className={article?.data[0]?.with[1]?.title}>
+              {article?.data[0]?.with[1]?.title}
+            </h1>
+            <h2>{article?.data[0]?.title}</h2>
+            <Container fluid className="image-content-bloc">
+              <img
+                src={article?.data[0]?.with[0]?.src}
+                alt={article?.data[0]?.with[0]?.alt}
+                className="img-spacing"
+              />
+              <p className="content">{article?.data[0]?.content}</p>
+            </Container>
+
           </Container>
         </Container>
 
@@ -132,9 +135,7 @@ const ArticleScreen = () => {
           })}
 
           {auth.role > 0 && (
-            <form 
-            onSubmit={handleSubmit}
-            >
+            <form onSubmit={handleSubmit}>
               <Container fluid className="comment-container">
                 {pseudo?.data[0]?.with[0]?.pseudo}
                 <Container fluid className="comment-content">

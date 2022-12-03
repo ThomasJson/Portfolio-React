@@ -68,14 +68,10 @@ h1 {
     padding-left: 10px !important;
     padding-right: 10px !important;
   }
-  .image-content-bloc {
-    flex-direction: column !important;
-  }
-  .content {
-    margin-left: 0px !important;
-  }
   img.img-spacing {
+    float: none;
     width: 100% !important;
+    margin-bottom: 10px !important;
   }
 }
 
