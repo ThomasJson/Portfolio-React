@@ -1,5 +1,5 @@
 import "./navBar.scss";
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { Button, Container, Nav } from "react-bootstrap";
 import { BiLogInCircle, BiUserPlus } from "react-icons/bi";
 import { NavLink } from "react-router-dom";
@@ -12,16 +12,26 @@ import useFetch from "../../hooks/useFetch";
 const NavBar = () => {
   const [modalRegister, setModalRegister] = React.useState(false);
   const [modalLogin, setModalLogin] = React.useState(false);
+  const [pseudo, setPseudo] = useState(null);
+  console.log('pseudo:', pseudo)
 
   const { auth } = useContext(AuthContext);
-  
-  const { data } = useFetch("app_user/" + auth.id, {
-    method: "POST",
-    body: JSON.stringify({ with: ["account"] }),
-  });
-  
-  console.log('auth:', auth);
-  console.log("data:", data);
+
+  useEffect(() => {
+    fetch("http://portfolio-api/app_user/" + auth.id, {
+      method: "POST",
+      body: JSON.stringify({
+        with: ["account"],
+      }),
+    })
+      .then((resp) => {
+        return resp.json();
+      })
+
+      .then((json) => {
+        setPseudo(json);
+      });
+  }, [auth]);
 
   return (
     <>
@@ -30,6 +40,11 @@ const NavBar = () => {
           <h2 className="name">Tom pearson</h2>
 
           <Nav className="navBar gap-4">
+            {auth.role === 4 && (
+              <NavLink to="/admin">
+                Admin
+              </NavLink>
+            )}
             <NavLink to="/">Home</NavLink>
             <NavLink to="/blog">Blog</NavLink>
             <NavLink to="/contact">Contact</NavLink>
@@ -40,9 +55,11 @@ const NavBar = () => {
           <Container fluid className="login-bloc">
 
             {auth.role > 0 && (
-              <Button className="btn-spacing">
-                {data?.data[0]?.with[0]?.pseudo}
-              </Button>
+              <NavLink to="/account">
+                <Button className="btn-spacing">
+                  {pseudo?.data[0]?.with[0].pseudo}
+                </Button>
+              </NavLink>
             )}
 
             {auth.role < 1 && (

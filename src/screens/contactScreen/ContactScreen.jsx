@@ -6,7 +6,7 @@ import { Button, Container } from "react-bootstrap";
 const ContactScreen = () => {
   return (
     <main>
-     <Container className="contact-bloc">
+     <Container fluid className="contact-bloc">
       <Form className="contact-form" >
         <Form.Group className="mb-3">
           {/* <Form.Label>Name</Form.Label> */}

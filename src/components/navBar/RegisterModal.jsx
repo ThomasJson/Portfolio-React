@@ -16,9 +16,9 @@ const RegisterModal = (props) => {
   const formInvalid = () => console.log("Erros", errors);
 
   const [msg, setMsg] = useState("");
+  
   const formSubmit = async (formData) => {
-
-    //console.log("Validated Data", formData);
+    
     const {data} = await doFetch("auth/register", {
       method: "POST",
       body: JSON.stringify(formData),

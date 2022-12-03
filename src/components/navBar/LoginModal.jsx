@@ -69,8 +69,8 @@ const LoginModal = (props) => {
     if (data?.data?.result) {
       setAuth({ role: +data.data?.role, id: data.data?.id });
       setCookie("blog", data.data?.token, { "max-age": 60 * 60 * 24 });
-      navigate("/account");
-      window.history.go();
+      navigate("/blog");
+      
     } else {
       setAuth({ role: 0, id: "0" });
       deleteCookie("blog");
@@ -90,7 +90,7 @@ const LoginModal = (props) => {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <form onSubmit={handleSubmit} className="coL mb-2" noValidate>
+        <form onSubmit={handleSubmit} className="coL mb-2 gap-3" noValidate>
           <input
             id="email-input"
             type="email"
@@ -98,9 +98,9 @@ const LoginModal = (props) => {
             name="mail"
             className="input-style"
           />
-          <i className={"infos text-danger" + (valid.email ? " d-none" : "")}>
+          {/* <i className={"infos text-danger" + (valid.email ? " d-none" : "")}>
             Une adresse email valide est requise
-          </i>
+          </i> */}
           <input
             id="password-input"
             type="password"
@@ -108,9 +108,9 @@ const LoginModal = (props) => {
             name="password"
             className="input-style"
           />
-          <i className={"infos text-danger" + (valid.password ? " d-none" : "")}>
+          {/* <i className={"infos text-danger" + (valid.password ? " d-none" : "")}>
             6 charactères dont une lettre majuscule
-          </i>
+          </i> */}
           <Button type="submit" className="btn-login">
             Se connecter
           </Button>

@@ -1,3 +1,29 @@
+// Test bg sur l'article
+.article-bg {
+    padding: 0px !important;
+    // background-color: #242526 !important;
+}
+h2 {
+    color: white;
+    font-weight: bold;
+}
+.image-content-bloc {
+    margin: 0px !important;
+    padding: 0px !important;
+}
 .img-spacing {
     width: 500px !important;
+    height: 306px !important;
+    float: left !important;
+    margin-right: 10px !important;
+    margin-bottom: 0px !important;
+}
+.content {
+    width: 100% !important;
+    margin: 0px !important;
+    color: white;
+}
+.comments-bloc {
+    clear: both !important;
+    margin: 0px !important;
 }

@@ -11,7 +11,7 @@ const Article = ({ title, content, category, src, alt, color }) => {
         <Card.Body>
           <Container className={color}>{category}</Container>
           <Card.Title>{title}</Card.Title>
-          <Card.Text>{content}</Card.Text>
+          <Card.Text>{content.substring(0, 60) + " ..."}</Card.Text>
           <Card.Img variant="top" className="img-style" src={src} alt={alt} />
         </Card.Body>
         

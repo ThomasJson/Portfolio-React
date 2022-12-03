@@ -19,10 +19,9 @@ const AuthProvider = ({ children }) => {
         setAuth({ role: 0, id: "0" });
         deleteCookie("blog");
       }
-
     };
-    check();
 
+    check();
   }, []);
 
   return (
