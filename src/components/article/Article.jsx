@@ -3,15 +3,15 @@ import React from "react";
 import Card from "react-bootstrap/Card";
 import { Container } from "react-bootstrap";
 
-const Article = ({ title, content, category, src, alt, color }) => {
+const Article = ({ title, content, category, src, alt, color, border }) => {
   return (
     <>
-      <Card className="card-style" style={{ width: "18rem" }}>
+      <Card className={"card-style " + border} style={{ width: "18rem" }}>
         
         <Card.Body>
-          <Container className={color}>{category}</Container>
+          <Container className={"category-text " + color}>{category}</Container>
           <Card.Title>{title}</Card.Title>
-          <Card.Text>{content.substring(0, 60) + " ..."}</Card.Text>
+          <Card.Text className="resume-style">{content.substring(0, 60) + " ..."}</Card.Text>
           <Card.Img variant="top" className="img-style" src={src} alt={alt} />
         </Card.Body>
         

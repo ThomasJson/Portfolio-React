@@ -1,11 +1,29 @@
-// Test bg sur l'article
-.article-bg {
-    padding: 0px !important;
-    // background-color: #242526 !important;
+.article-bg.Gaming {
+    padding: 10px !important;
+    background-color: #242526 !important;
+    border: 2px solid #F04E46 !important;
+    border-left: inherit !important;
+    border-right: inherit !important;
+    border-bottom: inherit !important;
+}
+.article-bg.Développement {
+    padding: 10px !important;
+    background-color: #242526 !important;
+    border: 2px solid #52A0E0 !important;
+    border-left: inherit !important;
+    border-right: inherit !important;
+    border-bottom: inherit !important;
+}
+.article-bg.Business {
+    padding: 10px !important;
+    background-color: #242526 !important;
+    border: 2px solid #F0E346 !important;
+    border-left: inherit !important;
+    border-right: inherit !important;
+    border-bottom: inherit !important;
 }
 h2 {
-    color: white;
-    font-weight: bold;
+    color: aquamarine;
 }
 .image-content-bloc {
     margin: 0px !important;

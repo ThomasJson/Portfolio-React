@@ -10,8 +10,9 @@ import doFetch from "../../helpers/fetchHelper";
 
 const LoginModal = (props) => {
   const { setAuth } = useContext(AuthContext);
+
   const [valid, setValid] = useState({ email: false, password: false });
-  console.log('valid:', valid)
+  console.log("valid:", valid);
 
   const navigate = useNavigate();
 
@@ -70,7 +71,6 @@ const LoginModal = (props) => {
       setAuth({ role: +data.data?.role, id: data.data?.id });
       setCookie("blog", data.data?.token, { "max-age": 60 * 60 * 24 });
       navigate("/blog");
-      
     } else {
       setAuth({ role: 0, id: "0" });
       deleteCookie("blog");
@@ -98,9 +98,6 @@ const LoginModal = (props) => {
             name="mail"
             className="input-style"
           />
-          {/* <i className={"infos text-danger" + (valid.email ? " d-none" : "")}>
-            Une adresse email valide est requise
-          </i> */}
           <input
             id="password-input"
             type="password"
@@ -108,9 +105,6 @@ const LoginModal = (props) => {
             name="password"
             className="input-style"
           />
-          {/* <i className={"infos text-danger" + (valid.password ? " d-none" : "")}>
-            6 charactères dont une lettre majuscule
-          </i> */}
           <Button type="submit" className="btn-login">
             Se connecter
           </Button>

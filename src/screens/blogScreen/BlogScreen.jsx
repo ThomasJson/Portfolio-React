@@ -31,7 +31,7 @@ const BlogScreen = () => {
                 onClick={() => {
                   navigate(`/article/${article.Id_article}`);
                 }}
-                className={"article-spacing " + (article.with[1]?.title)}
+                className="article-spacing"
               >
                 <Article
                   title={article.title}
@@ -40,6 +40,7 @@ const BlogScreen = () => {
                   alt={article.with[0]?.alt}
                   category={article.with[1]?.title}
                   color={article.with[1]?.title}
+                  border={article.with[1]?.title}
                 />
               </div>
             );

@@ -1,18 +1,50 @@
-.card-style {
+.card-style.Développement {
     background-color: #242526 !important;
     border-radius: 0px !important;
-    color: white;
+    border: 2px solid #52A0E0 !important;
+    border-left: inherit !important;
+    border-right: inherit !important;
+    border-bottom: inherit !important;
+    color: aquamarine !important;
+}
+.card-style.Gaming {
+    background-color: #242526 !important;
+    border-radius: 0px !important;
+    border: 2px solid #F04E46 !important;
+    border-left: inherit !important;
+    border-right: inherit !important;
+    border-bottom: inherit !important;
+    color: aquamarine !important;
+}
+.card-style.Business {
+    background-color: #242526 !important;
+    border-radius: 0px !important;
+    border: 2px solid #F0E346 !important;
+    border-left: inherit !important;
+    border-right: inherit !important;
+    border-bottom: inherit !important;
+    color: aquamarine !important;
 }
 .img-style {
     height: 170px !important;
     border-radius: 0px !important;
 }
-.Gaming {
-    color: red;
+.category-text.Gaming {
+    color: #F04E46;
+    letter-spacing: 2px;
+    margin-bottom: 8px !important;
 }
-.Développement {
-    color: blue;
+.category-text.Développement {
+    color: #52A0E0;
+    letter-spacing: 2px;
+    margin-bottom: 8px !important;
 }
-.Business {
-    color: yellow;
+.category-text.Business {
+    color: #F0E346;
+    letter-spacing: 2px;
+    margin-bottom: 8px !important;
+}
+.resume-style {
+    font-style: italic;
+    color: white !important;
 }

@@ -7,11 +7,11 @@ import { AuthContext } from "../../contexts/AuthContext";
 import OffCanvas from "./OffCanvas";
 import RegisterModal from "./RegisterModal";
 import LoginModal from "./LoginModal";
-import useFetch from "../../hooks/useFetch";
 
 const NavBar = () => {
   const [modalRegister, setModalRegister] = React.useState(false);
   const [modalLogin, setModalLogin] = React.useState(false);
+
   const [pseudo, setPseudo] = useState(null);
   console.log('pseudo:', pseudo)
 
