@@ -101,9 +101,11 @@ const ArticleScreen = () => {
     <>
       <main>
         <Container fluid className="singleArticle-container">
-          <Container fluid className="article-bg">
-
-            <h1 className={article?.data[0]?.with[1]?.title}>
+          <Container
+            fluid
+            className={"article-bg " + article?.data[0]?.with[1]?.title}
+          >
+            <h1 className={"category-text " + article?.data[0]?.with[1]?.title}>
               {article?.data[0]?.with[1]?.title}
             </h1>
             <h2>{article?.data[0]?.title}</h2>
@@ -115,11 +117,11 @@ const ArticleScreen = () => {
               />
               <p className="content">{article?.data[0]?.content}</p>
             </Container>
-
           </Container>
         </Container>
 
         <Container fluid className="comments-bloc">
+          {/* // TODO .filter() */}
           {comments?.data.map((comment) => {
             if (comment.Id_article === id) {
               return (
@@ -128,6 +130,7 @@ const ArticleScreen = () => {
                     content={comment.content}
                     author={comment?.with[0]?.pseudo}
                     date={comment.created_at}
+                    border={article?.data[0]?.with[1]?.title}
                   />
                 </div>
               );
@@ -136,9 +139,14 @@ const ArticleScreen = () => {
 
           {auth.role > 0 && (
             <form onSubmit={handleSubmit}>
-              <Container fluid className="comment-container">
-                {pseudo?.data[0]?.with[0]?.pseudo}
-                <Container fluid className="comment-content">
+              <Container
+                fluid
+                className={
+                  "comment-container " + article?.data[0]?.with[1]?.title
+                }
+              >
+                <Container className="aquamarine">{pseudo?.data[0]?.with[0]?.pseudo}</Container>
+                <Container fluid className="comment-content mt-1">
                   <input
                     id="com-input"
                     type="text"

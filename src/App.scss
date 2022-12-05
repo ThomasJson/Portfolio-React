@@ -52,6 +52,9 @@ h1 {
 .betWeen {
   justify-content: space-between !important;
 }
+.aquamarine {
+  color: aquamarine;
+}
 
 // ---------------------------------------- MEDIA QUERIES ----------------------------------------------------
 @media screen and (max-width: 635px) {
@@ -72,6 +75,17 @@ h1 {
     float: none;
     width: 100% !important;
     margin-bottom: 10px !important;
+  }
+  .contact-bloc {
+    flex-direction: column !important;
+  }
+  .contact-section.container-fluid {
+    width: 100% !important;
+  }
+  .map-container {
+    width: 100% !important;
+    height: 400px !important;
+    margin-top: 10px !important;
   }
 }
 
