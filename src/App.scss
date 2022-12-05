@@ -76,6 +76,17 @@ h1 {
     width: 100% !important;
     margin-bottom: 10px !important;
   }
+  .contact-bloc {
+    flex-direction: column !important;
+  }
+  .contact-section.container-fluid {
+    width: 100% !important;
+  }
+  .map-container {
+    width: 100% !important;
+    height: 400px !important;
+    margin-top: 10px !important;
+  }
 }
 
 @import "~bootstrap/scss/bootstrap";
