@@ -38,35 +38,54 @@ const ContactScreen = () => {
             </p>
             <Form className="contact-form" onSubmit={handleSubmit}>
               <Form.Group className="mb-3">
-                <Form.Control
+                <input
                   type="text"
                   placeholder="Name"
                   id="name-contact"
+                  autocomplete="off"
+                  onInput={() => {
+                    const input = document.getElementById("name-contact");
+                    input.classList.add("onInput");
+                  }}
                 />
               </Form.Group>
               <Form.Group className="mb-3">
-                <Form.Control
+                <input
                   type="email"
                   placeholder="Email"
                   id="email-contact"
+                  autocomplete="off"
+                  onInput={() => {
+                    const input = document.getElementById("email-contact");
+                    input.classList.add("onInput");
+                  }}
                 />
               </Form.Group>
               <Form.Group className="mb-3">
-                <Form.Control
+                <input
                   type="text"
                   placeholder="Subject"
                   id="subject-contact"
+                  autocomplete="off"
+                  onInput={() => {
+                    const input = document.getElementById("subject-contact");
+                    input.classList.add("onInput");
+                  }}
                 />
               </Form.Group>
               <Form.Group className="mb-3">
-                <Form.Control
-                  as="textarea"
+                <textarea
                   placeholder="Message"
-                  rows={7}
                   id="message-contact"
+                  autocomplete="off"
+                  rows="6"
+                  onInput={() => {
+                    const input = document.getElementById("message-contact");
+                    input.classList.add("onInput");
+                  }}
                 />
               </Form.Group>
-              <Button className="btn-login" type="submit">
+              <Button className="btn-style no-radius" type="submit">
                 Envoyer
               </Button>
             </Form>

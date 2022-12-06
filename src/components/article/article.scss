@@ -25,8 +25,14 @@
     border-bottom: inherit !important;
     color: aquamarine !important;
 }
-.card-style:hover {
-    background-color: #404040 !important;
+.card-style.Business:hover {
+    background-color: #f0e2460c !important;
+}
+.card-style.Développement:hover {
+    background-color: #52a0e014 !important;
+}
+.card-style.Gaming:hover {
+    background-color: #f04f460e !important;
 }
 .img-style {
     height: 170px !important;

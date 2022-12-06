@@ -5,15 +5,10 @@ import { BiLogInCircle, BiUserPlus } from "react-icons/bi";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 import OffCanvas from "./OffCanvas";
-import RegisterModal from "./RegisterModal";
-import LoginModal from "./LoginModal";
 
 const NavBar = () => {
-  const [modalRegister, setModalRegister] = React.useState(false);
-  const [modalLogin, setModalLogin] = React.useState(false);
-
   const [pseudo, setPseudo] = useState(null);
-  console.log('pseudo:', pseudo)
+  console.log("pseudo:", pseudo);
 
   const { auth } = useContext(AuthContext);
 
@@ -40,11 +35,7 @@ const NavBar = () => {
           <h2 className="name">Tom pearson</h2>
 
           <Nav className="navBar gap-4">
-            {auth.role === 4 && (
-              <NavLink to="/admin">
-                Admin
-              </NavLink>
-            )}
+            {auth.role === 4 && <NavLink to="/admin">Admin</NavLink>}
             <NavLink to="/">Home</NavLink>
             <NavLink to="/blog">Blog</NavLink>
             <NavLink to="/contact">Contact</NavLink>
@@ -53,7 +44,6 @@ const NavBar = () => {
 
         <Container fluid className="btn-bloc">
           <Container fluid className="login-bloc">
-
             {auth.role > 0 && (
               <NavLink to="/account">
                 <Button className="btn-spacing">
@@ -63,29 +53,20 @@ const NavBar = () => {
             )}
 
             {auth.role < 1 && (
-              <Button
-                className="btn-spacing btn-login"
-                onClick={() => setModalLogin(true)}
-              >
-                <BiLogInCircle />
-              </Button>
+              <NavLink to="/login">
+                <Button className="btn-spacing btn-style">
+                  <BiLogInCircle />
+                </Button>
+              </NavLink>
             )}
-
-            <LoginModal show={modalLogin} onHide={() => setModalLogin(false)} />
 
             {auth.role < 1 && (
-              <Button
-                className="btn-spacing btn-register"
-                onClick={() => setModalRegister(true)}
-              >
-                <BiUserPlus />
-              </Button>
+              <NavLink to="/register">
+                <Button className="btn-spacing btn-style">
+                  <BiUserPlus />
+                </Button>
+              </NavLink>
             )}
-
-            <RegisterModal
-              show={modalRegister}
-              onHide={() => setModalRegister(false)}
-            />
           </Container>
           <OffCanvas placement={"end"} />
         </Container>

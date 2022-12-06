@@ -1,14 +1,14 @@
-import "./loginModal.scss";
+import "./loginScreen.scss";
 import React, { useContext } from "react";
-import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import { useNavigate, NavLink } from "react-router-dom";
 import { useState } from "react";
+import doFetch from "../../helpers/fetchHelper";
 import { AuthContext } from "../../contexts/AuthContext";
 import { deleteCookie, setCookie } from "../../helpers/cookieHelper";
-import doFetch from "../../helpers/fetchHelper";
+import { Container } from "react-bootstrap";
 
-const LoginModal = (props) => {
+const LoginScreen = () => {
   const { setAuth } = useContext(AuthContext);
 
   const [valid, setValid] = useState({ email: false, password: false });
@@ -76,42 +76,42 @@ const LoginModal = (props) => {
       deleteCookie("blog");
     }
   };
-
   return (
-    <Modal
-      {...props}
-      size="lg"
-      aria-labelledby="contained-modal-title-vcenter"
-      centered
-    >
-      <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">
-          Se connecter
-        </Modal.Title>
-      </Modal.Header>
-      <Modal.Body>
-        <form onSubmit={handleSubmit} className="coL mb-2 gap-3" noValidate>
-          <input
-            id="email-input"
-            type="email"
-            placeholder="Adresse e-mail"
-            name="mail"
-          />
-          <input
-            id="password-input"
-            type="password"
-            placeholder="Mot de passe"
-            name="password"
-            className="input-style"
-          />
-          <Button type="submit" className="btn-login">
-            Se connecter
-          </Button>
-        </form>
-        <NavLink to="/">Mot de passe oublié ?</NavLink>
-      </Modal.Body>
-    </Modal>
+    <main>
+      <Container fluid className="center-bloc">
+        <Container fluid className="login-section">
+          <h2>Connexion</h2>
+          <form onSubmit={handleSubmit} className="coL mb-2 gap-3 form-spacing" noValidate>
+            <input
+              id="email-input"
+              type="email"
+              placeholder="Adresse e-mail"
+              name="mail"
+              autocomplete="off"
+              onInput={() => {
+                const input = document.getElementById('email-input');
+                input.classList.add('onInput');
+              }}
+            />
+            <input
+              id="password-input"
+              type="password"
+              placeholder="Mot de passe"
+              name="password"
+              onInput={() => {
+                const input = document.getElementById('password-input');
+                input.classList.add('onInput');
+              }}
+            />
+            <Button type="submit" className="btn-style no-radius w-100">
+              Se connecter
+            </Button>
+            <NavLink to="/">Mot de passe oublié ?</NavLink>
+          </form>
+        </Container>
+      </Container>
+    </main>
   );
 };
 
-export default LoginModal;
+export default LoginScreen;

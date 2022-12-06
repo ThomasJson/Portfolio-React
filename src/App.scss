@@ -1,3 +1,5 @@
+// ---------------------------------------- APPLY TO ALL WEBSITE -----------------------------------------------
+
 @font-face {
   font-family: "Raleway-Light";
   src: url(../public/assets/fonts/Raleway-Light.ttf);
@@ -8,7 +10,7 @@
 }
 * {
   box-sizing: border-box !important;
-  font-family: "Raleway-Light";
+  font-family: "Raleway-Light" !important;
 }
 .container {
   padding: 0px !important;
@@ -18,7 +20,7 @@ main {
   min-height: 80vh;
   padding-top: 12px;
   padding-bottom: 12px;
-  background-color: #18191A;
+  background-color: #18191a;
 }
 a {
   text-decoration: none !important;
@@ -30,22 +32,52 @@ svg {
 h1 {
   margin: 0px !important;
 }
+h2 {
+  color: aquamarine;
+}
+
+// ------ Form Styles -------
+
 input {
   padding: 10px !important;
+  width: 100% !important;
   background-color: #404040 !important;
   border-radius: 0px !important;
   border: 0px !important;
+  letter-spacing: 1px !important;
 }
 textarea {
   padding: 10px !important;
   background-color: #404040 !important;
   border-radius: 0px !important;
   border: 0px !important;
+  letter-spacing: 1px !important;
 }
-::placeholder { 
+::placeholder {
   color: white !important;
   font-size: 1em;
-  opacity: 1 !important; 
+  opacity: 1 !important;
+}
+.onInput {
+  color: white;
+  background-color: #404040;
+}
+
+// ------ Btn Styles --------
+
+button.btn.btn-primary {
+  background-color: #404040;
+  border-color: #404040 !important;
+  border-radius: 5px;
+  padding: 8px !important;
+  letter-spacing: 1px;
+}
+.btn-style {
+  color: aquamarine !important;
+}
+.btn-style:hover {
+  color: white !important;
+  background-color: rgba(127, 255, 212, 0.408) !important;
 }
 
 // ---------------------------------------- GLOBAL CLASSES ----------------------------------------------------
@@ -73,9 +105,16 @@ textarea {
 .aquamarine {
   color: aquamarine;
 }
+.white {
+  color: white;
+}
+.no-radius {
+  border-radius: 0px !important;
+}
 
 // ---------------------------------------- MEDIA QUERIES ----------------------------------------------------
-@media screen and (max-width: 635px) {
+
+@media screen and (max-width: 650px) {
   #burger-menu {
     display: block !important;
   }
@@ -105,6 +144,14 @@ textarea {
     height: 400px !important;
     margin-top: 10px !important;
   }
+  .login-section {
+    width: 90% !important;
+  }
+  .register-section {
+    width: 90% !important;
+  }
 }
+
+// ------------------------------------------- BOOTSTRAP -----------------------------------------------------
 
 @import "~bootstrap/scss/bootstrap";
