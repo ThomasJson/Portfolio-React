@@ -1,7 +1,6 @@
 import "./articleScreen.scss";
 import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import useFetch from "../../hooks/useFetch";
 import { Button, Container } from "react-bootstrap";
 import Comment from "../../components/comment/Comment";
 import { AuthContext } from "../../contexts/AuthContext";

@@ -87,12 +87,21 @@ const LoginScreen = () => {
               type="email"
               placeholder="Adresse e-mail"
               name="mail"
+              autocomplete="off"
+              onInput={() => {
+                const input = document.getElementById('email-input');
+                input.classList.add('onInput');
+              }}
             />
             <input
               id="password-input"
               type="password"
               placeholder="Mot de passe"
               name="password"
+              onInput={() => {
+                const input = document.getElementById('password-input');
+                input.classList.add('onInput');
+              }}
             />
             <Button type="submit" className="btn-style no-radius w-100">
               Se connecter
