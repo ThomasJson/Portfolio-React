@@ -17,6 +17,8 @@ import AccountValidateScreen from "./screens/accountValidateScreen/AccountValida
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle";
 import AdminArticle from "./screens/adminScreen/adminArticle/AdminArticle";
+import LoginScreen from "./screens/loginScreen/LoginScreen";
+import RegisterScreen from "./screens/registerScreen/RegisterScreen";
 
 function App() {
   const { auth } = useContext(AuthContext);
@@ -28,6 +30,8 @@ function App() {
           
           <Route index element={<HomeScreen />} />
           <Route path="/blog" element={<BlogScreen />} />
+          <Route path="/login" element={<LoginScreen />} />
+          <Route path="/register" element={<RegisterScreen />} />
           <Route path="/contact" element={<ContactScreen />} />
           <Route path="/article/:id" element={<ArticleScreen />} />
 

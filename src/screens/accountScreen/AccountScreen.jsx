@@ -5,6 +5,7 @@ import useFetch from "../../hooks/useFetch";
 import { AuthContext } from "../../contexts/AuthContext";
 import { deleteCookie } from "../../helpers/cookieHelper";
 import { Button, Container } from "react-bootstrap";
+import LoadingScreen from "../loadingScreen/LoadingScreen";
 
 function AccountScreen() {
   const { auth, setAuth } = useContext(AuthContext);
@@ -14,7 +15,7 @@ function AccountScreen() {
     body: JSON.stringify({ with: ["account"] }),
   });
 
-  if (loading) return <div>Loading ...</div>;
+  if (loading) return <LoadingScreen />;
 
   if (error) {
     console.log(error, text);

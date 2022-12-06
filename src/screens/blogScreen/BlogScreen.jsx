@@ -4,6 +4,7 @@ import Article from "../../components/article/Article";
 import useFetch from "../../hooks/useFetch";
 import { useNavigate } from "react-router-dom";
 import { Container } from "react-bootstrap";
+import LoadingScreen from "../loadingScreen/LoadingScreen";
 
 const BlogScreen = () => {
   const navigate = useNavigate();
@@ -13,7 +14,7 @@ const BlogScreen = () => {
     body: JSON.stringify({ with: ["image", "category"] }),
   });
 
-  if (loading) return <div>Loading ...</div>;
+  if (loading) return <LoadingScreen />;
 
   if (error) {
     console.log(error, text);
