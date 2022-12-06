@@ -33,7 +33,7 @@ const Footer = () => {
       {/* <Container fluid className="copyright">
         © 2022 Copyright: PY Thomas
       </Container> */}
-      
+
     </footer>
   );
 };
