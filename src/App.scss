@@ -15,8 +15,9 @@
   margin: 0px !important;
 }
 main {
-  min-height: 90vh;
+  min-height: 80vh;
   padding-top: 12px;
+  padding-bottom: 12px;
   background-color: #18191A;
 }
 a {
@@ -28,6 +29,23 @@ svg {
 }
 h1 {
   margin: 0px !important;
+}
+input {
+  padding: 10px !important;
+  background-color: #404040 !important;
+  border-radius: 0px !important;
+  border: 0px !important;
+}
+textarea {
+  padding: 10px !important;
+  background-color: #404040 !important;
+  border-radius: 0px !important;
+  border: 0px !important;
+}
+::placeholder { 
+  color: white !important;
+  font-size: 1em;
+  opacity: 1 !important; 
 }
 
 // ---------------------------------------- GLOBAL CLASSES ----------------------------------------------------

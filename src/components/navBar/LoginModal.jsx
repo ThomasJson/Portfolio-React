@@ -96,7 +96,6 @@ const LoginModal = (props) => {
             type="email"
             placeholder="Adresse e-mail"
             name="mail"
-            className="input-style"
           />
           <input
             id="password-input"
