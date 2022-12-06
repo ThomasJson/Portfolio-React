@@ -57,23 +57,3 @@
     display: flex;
     flex-direction: row;
 }
-
-// ---------------------------------------------------------- BTN STYLE -------------------------------------------------------------------
-button.btn.btn-primary {
-  background-color: #404040;
-  border-color: #404040 !important;
-  border-radius: 5px !important;
-  padding: 8px !important;
-  letter-spacing: 1px;
-}
-.btn-register:hover {
-    color: #404040 !important;
-    background-color: white !important;
-}
-.btn-login {
-    color: aquamarine !important;
-}
-.btn-login:hover {
-    color: white !important;
-    background-color: rgba(127, 255, 212, 0.408) !important;
-}

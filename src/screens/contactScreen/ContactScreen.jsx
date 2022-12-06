@@ -66,7 +66,7 @@ const ContactScreen = () => {
                   id="message-contact"
                 />
               </Form.Group>
-              <Button className="btn-login" type="submit">
+              <Button className="btn-style no-radius" type="submit">
                 Envoyer
               </Button>
             </Form>

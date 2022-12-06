@@ -52,26 +52,20 @@ const RegisterScreen = () => {
             <input
               className="mb-3"
               type="text"
-              placeholder="Pseudo"
+              placeholder="Pseudo *"
               name="pseudo"
               {...register("pseudo", { required: true, minLength: 3 })}
             />
             <input
               className="mb-3"
               type="email"
-              placeholder="Adresse e-mail"
+              placeholder="Adresse e-mail *"
               name="mail"
               {...register("mail", {
                 required: true,
                 pattern: /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/i,
               })}
             />
-            {/* <input
-            className="mb-3"
-            type="password"
-            placeholder="Mot de passe"
-            name="mp"
-          /> */}
             <label htmlFor="birthday" className="mb-1 white">Date de naissance</label>
             <input
               className="mb-3 letter-spacing white"
@@ -80,7 +74,7 @@ const RegisterScreen = () => {
               name="birthday"
             ></input>
 
-            <Button type="submit" className="btn-login w-100">
+            <Button type="submit" className="btn-style no-radius w-100">
               S'inscrire
             </Button>
           </form>

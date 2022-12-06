@@ -5,13 +5,8 @@ import { BiLogInCircle, BiUserPlus } from "react-icons/bi";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 import OffCanvas from "./OffCanvas";
-import RegisterModal from "./RegisterModal";
-import LoginModal from "./LoginModal";
 
 const NavBar = () => {
-  const [modalRegister, setModalRegister] = React.useState(false);
-  const [modalLogin, setModalLogin] = React.useState(false);
-
   const [pseudo, setPseudo] = useState(null);
   console.log("pseudo:", pseudo);
 
@@ -59,32 +54,19 @@ const NavBar = () => {
 
             {auth.role < 1 && (
               <NavLink to="/login">
-                <Button
-                  className="btn-spacing btn-login"
-                  // onClick={() => setModalLogin(true)}
-                >
+                <Button className="btn-spacing btn-style">
                   <BiLogInCircle />
                 </Button>
               </NavLink>
             )}
 
-            {/* <LoginModal show={modalLogin} onHide={() => setModalLogin(false)} /> */}
-
             {auth.role < 1 && (
               <NavLink to="/register">
-                <Button
-                  className="btn-spacing btn-register"
-                  // onClick={() => setModalRegister(true)}
-                >
+                <Button className="btn-spacing btn-style">
                   <BiUserPlus />
                 </Button>
               </NavLink>
             )}
-
-            {/* <RegisterModal
-              show={modalRegister}
-              onHide={() => setModalRegister(false)}
-            /> */}
           </Container>
           <OffCanvas placement={"end"} />
         </Container>

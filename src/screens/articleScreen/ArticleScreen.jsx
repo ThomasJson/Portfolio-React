@@ -152,10 +152,10 @@ const ArticleScreen = () => {
                     type="text"
                     placeholder="Laissez un commentaire"
                     name="content"
-                    className="input-style w-100"
+                    className="w-100"
                   />
                 </Container>
-                <Button type="submit" className="mt-2">
+                <Button type="submit" className="btn-style no-radius mt-2">
                   Poster
                 </Button>
               </Container>

@@ -94,7 +94,7 @@ const LoginScreen = () => {
               placeholder="Mot de passe"
               name="password"
             />
-            <Button type="submit" className="btn-login w-100">
+            <Button type="submit" className="btn-style no-radius w-100">
               Se connecter
             </Button>
             <NavLink to="/">Mot de passe oublié ?</NavLink>
