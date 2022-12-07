@@ -74,6 +74,7 @@ button.btn.btn-primary {
 }
 .btn-style {
   color: #25F4EE !important;
+  font-size: 1.1em !important;
 }
 .btn-style:hover {
   color: white !important;
@@ -110,7 +111,7 @@ button.btn.btn-primary {
   justify-content: space-between !important;
 }
 .aquamarine {
-  color: aquamarine;
+  color: #25F4EE;
 }
 .white {
   color: white;
@@ -124,6 +125,12 @@ button.btn.btn-primary {
   justify-content: center;
   align-items: center;
   height: calc(80vh - 44px) !important;
+}
+.show {
+  display: flex !important;
+}
+.hide {
+  display: none !important;
 }
 
 // ---------------------------------------- MEDIA QUERIES ----------------------------------------------------
