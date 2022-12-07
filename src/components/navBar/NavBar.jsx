@@ -46,7 +46,7 @@ const NavBar = () => {
           <Container fluid className="login-bloc">
             {auth.role > 0 && (
               <NavLink to="/account">
-                <Button className="btn-spacing">
+                <Button className="btn-spacing btn-style">
                   {pseudo?.data[0]?.with[0].pseudo}
                 </Button>
               </NavLink>
@@ -62,7 +62,7 @@ const NavBar = () => {
 
             {auth.role < 1 && (
               <NavLink to="/register">
-                <Button className="btn-spacing btn-style2">
+                <Button className="btn-spacing btn-style">
                   <BiUserPlus />
                 </Button>
               </NavLink>
