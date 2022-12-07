@@ -1,0 +1,51 @@
+.parametres-bloc {
+  padding: 12px !important;
+  display: flex;
+  flex-direction: column;
+  background-color: #242526 !important;
+}
+.infos-bloc {
+  padding: 0px !important;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+.infos-data {
+  padding: 10px !important;
+  margin: 0px !important;
+  width: calc(100% - 160px) !important;
+  display: flex;
+  flex-direction: row;
+  background-color: #18191a;
+}
+.infos-data p {
+  margin: 0px !important;
+  width: auto !important;
+  padding-right: 6px;
+}
+.btn-modif {
+  width: 150px !important;
+}
+.btn-xv {
+  width: 48%;
+}
+.modif-data-bloc {
+  padding: 0px !important;
+  margin-top: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.cancel-validate {
+  width: 150px !important;
+  display: flex;
+  justify-content: space-between;
+  margin: 0px !important;
+  padding: 0px !important;
+}
+.account-input {
+    width: calc(100% - 160px) !important;
+}

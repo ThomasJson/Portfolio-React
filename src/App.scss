@@ -33,7 +33,7 @@ h1 {
   margin: 0px !important;
 }
 h2 {
-  color: aquamarine;
+  color: #25F4EE;
 }
 
 // ------ Form Styles -------
@@ -73,11 +73,19 @@ button.btn.btn-primary {
   letter-spacing: 1px;
 }
 .btn-style {
-  color: aquamarine !important;
+  color: #25F4EE !important;
+  font-size: 1.1em !important;
 }
 .btn-style:hover {
   color: white !important;
-  background-color: rgba(127, 255, 212, 0.408) !important;
+  background-color: #25f4ed1d !important;
+}
+.btn-style2 {
+  color: #fe2c55 !important;
+}
+.btn-style2:hover {
+  color: white !important;
+  background-color: #fe2c561c !important;
 }
 
 // ---------------------------------------- GLOBAL CLASSES ----------------------------------------------------
@@ -103,13 +111,26 @@ button.btn.btn-primary {
   justify-content: space-between !important;
 }
 .aquamarine {
-  color: aquamarine;
+  color: #25F4EE;
 }
 .white {
   color: white;
 }
 .no-radius {
   border-radius: 0px !important;
+}
+.center-bloc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: calc(80vh - 44px) !important;
+}
+.show {
+  display: flex !important;
+}
+.hide {
+  display: none !important;
 }
 
 // ---------------------------------------- MEDIA QUERIES ----------------------------------------------------

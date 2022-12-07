@@ -144,7 +144,9 @@ const ArticleScreen = () => {
                   "comment-container " + article?.data[0]?.with[1]?.title
                 }
               >
-                <Container className="aquamarine">{pseudo?.data[0]?.with[0]?.pseudo}</Container>
+                <Container className="aquamarine">
+                  {pseudo?.data[0]?.with[0]?.pseudo}
+                </Container>
                 <Container fluid className="comment-content mt-1">
                   <input
                     id="com-input"
@@ -152,6 +154,11 @@ const ArticleScreen = () => {
                     placeholder="Laissez un commentaire"
                     name="content"
                     className="w-100"
+                    autocomplete="off"
+                    onInput={() => {
+                      const input = document.getElementById("com-input");
+                      input.classList.add("onInput");
+                    }}
                   />
                 </Container>
                 <Button type="submit" className="btn-style no-radius mt-2">

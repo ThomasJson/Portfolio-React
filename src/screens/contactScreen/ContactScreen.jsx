@@ -32,10 +32,10 @@ const ContactScreen = () => {
         <Container fluid className="contact-bloc">
           <Container fluid className="contact-section">
             <h2>Afin de me contacter</h2>
-            <p>
+            {/* <p>
               Pour un premier contact professionel ou pour partager votre avis
               sur un article 😉
-            </p>
+            </p> */}
             <Form className="contact-form" onSubmit={handleSubmit}>
               <Form.Group className="mb-3">
                 <input
