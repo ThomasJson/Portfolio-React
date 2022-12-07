@@ -70,7 +70,6 @@ function AccountScreen() {
           <h2>Paramètres du compte</h2>
 
           {/* ///////////// CHANGE PSEUDO ///////////////// */}
-
           <Container fluid className="parametres-bloc">
             <Container fluid className="infos-bloc">
               <Container fluid className="infos-data">
@@ -90,7 +89,7 @@ function AccountScreen() {
                   type="text"
                   placeholder="Nouveau Pseudo"
                   id="nouveau-pseudo"
-                  className="w-50"
+                  className="account-input"
                   autoComplete="off"
                   onInput={() => {
                     const input = document.getElementById("nouveau-pseudo");
@@ -113,7 +112,6 @@ function AccountScreen() {
           </Container>
 
           {/* ///////////// CHANGE EMAIL ///////////////// */}
-          
           <Container fluid className="parametres-bloc mt-2">
             <Container fluid className="infos-bloc">
               <Container fluid className="infos-data">
@@ -134,7 +132,7 @@ function AccountScreen() {
                   type="text"
                   placeholder="Nouvelle Adresse Email"
                   id="nouveau-mail"
-                  className="w-50"
+                  className="account-input"
                   autoComplete="off"
                   onInput={() => {
                     const input = document.getElementById("nouveau-mail");
