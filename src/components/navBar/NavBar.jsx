@@ -62,7 +62,7 @@ const NavBar = () => {
 
             {auth.role < 1 && (
               <NavLink to="/register">
-                <Button className="btn-spacing btn-style">
+                <Button className="btn-spacing btn-style2">
                   <BiUserPlus />
                 </Button>
               </NavLink>

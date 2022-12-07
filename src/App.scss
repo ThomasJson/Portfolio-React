@@ -33,7 +33,7 @@ h1 {
   margin: 0px !important;
 }
 h2 {
-  color: aquamarine;
+  color: #25F4EE;
 }
 
 // ------ Form Styles -------
@@ -73,11 +73,18 @@ button.btn.btn-primary {
   letter-spacing: 1px;
 }
 .btn-style {
-  color: aquamarine !important;
+  color: #25F4EE !important;
 }
 .btn-style:hover {
   color: white !important;
-  background-color: rgba(127, 255, 212, 0.408) !important;
+  background-color: #25f4ed1d !important;
+}
+.btn-style2 {
+  color: #fe2c55 !important;
+}
+.btn-style2:hover {
+  color: white !important;
+  background-color: #fe2c561c !important;
 }
 
 // ---------------------------------------- GLOBAL CLASSES ----------------------------------------------------
