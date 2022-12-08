@@ -34,6 +34,7 @@ h1 {
 }
 h2 {
   color: #25F4EE;
+  letter-spacing: 1px;
 }
 
 // ------ Form Styles -------
@@ -134,7 +135,7 @@ button.btn.btn-primary {
   height: calc(80vh - 44px) !important;
 }
 .letter-spacing {
-  letter-spacing: 0.2rem !important;
+  letter-spacing: 1px !important;
 }
 .show {
   display: flex !important;
