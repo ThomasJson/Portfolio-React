@@ -182,6 +182,21 @@ button.btn.btn-primary {
   .register-section {
     width: 90% !important;
   }
+  .infos-data {
+    display: flex;
+    flex-direction: column !important;
+  }
+  // -------- FOOTER --------------
+  
+  .inspired {
+    display: none !important;
+  }
+  .copyright {
+    display: none !important;
+  }
+  .socials-bloc {
+    width: 100% !important;
+  }
 }
 
 // ------------------------------------------- BOOTSTRAP -----------------------------------------------------

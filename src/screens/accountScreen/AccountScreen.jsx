@@ -73,7 +73,7 @@ function AccountScreen() {
           <Container fluid className="parametres-bloc">
             <Container fluid className="infos-bloc">
               <Container fluid className="infos-data">
-                <p className="letter-spacing">Pseudo :</p>
+                <p className="letter-spacing">Pseudo actuel :</p>
                 <p className="letter-spacing">{appUser?.data[0]?.with[0].pseudo}</p>
               </Container>
               <Button
@@ -115,7 +115,7 @@ function AccountScreen() {
           <Container fluid className="parametres-bloc mt-2">
             <Container fluid className="infos-bloc">
               <Container fluid className="infos-data">
-                <p className="letter-spacing">Email :</p>
+                <p className="letter-spacing">Email actuel :</p>
                 <p className="letter-spacing">{appUser?.data[0]?.mail}</p>
               </Container>
               <Button
