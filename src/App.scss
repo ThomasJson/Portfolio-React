@@ -147,12 +147,16 @@ button.btn.btn-primary {
 // ---------------------------------------- MEDIA QUERIES ----------------------------------------------------
 
 @media screen and (max-width: 650px) {
+
+  // ------- NAVBAR ----------
   #burger-menu {
     display: block !important;
   }
   .navBar.gap-4.nav {
     display: none !important;
   }
+
+  // ----- BLOG SCREEN ---------
   .blog-container.container-fluid {
     display: flex;
     flex-direction: column !important;
@@ -160,11 +164,15 @@ button.btn.btn-primary {
     padding-left: 10px !important;
     padding-right: 10px !important;
   }
+
+  // ------ ARTICLE SCREEN ------
   img.img-spacing {
     float: none;
     width: 100% !important;
     margin-bottom: 10px !important;
   }
+
+  // ------ CONTACT SCREEN -------
   .contact-bloc {
     flex-direction: column !important;
   }
@@ -176,18 +184,21 @@ button.btn.btn-primary {
     height: 400px !important;
     margin-top: 10px !important;
   }
+
+  // ---- LOGIN/REGISTER -------
   .login-section {
     width: 90% !important;
   }
   .register-section {
     width: 90% !important;
   }
+
+  // ---- ACCOUNT SCREEN ------
   .infos-data {
     display: flex;
     flex-direction: column !important;
   }
   // -------- FOOTER --------------
-  
   .inspired {
     display: none !important;
   }
