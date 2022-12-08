@@ -73,8 +73,8 @@ function AccountScreen() {
           <Container fluid className="parametres-bloc">
             <Container fluid className="infos-bloc">
               <Container fluid className="infos-data">
-                <p>Pseudo :</p>
-                <p>{appUser?.data[0]?.with[0].pseudo}</p>
+                <p className="letter-spacing">Pseudo :</p>
+                <p className="letter-spacing">{appUser?.data[0]?.with[0].pseudo}</p>
               </Container>
               <Button
                 className="btn-style no-radius btn-modif"
@@ -115,8 +115,8 @@ function AccountScreen() {
           <Container fluid className="parametres-bloc mt-2">
             <Container fluid className="infos-bloc">
               <Container fluid className="infos-data">
-                <p>Email :</p>
-                <p>{appUser?.data[0]?.mail}</p>
+                <p className="letter-spacing">Email :</p>
+                <p className="letter-spacing">{appUser?.data[0]?.mail}</p>
               </Container>
               <Button
                 className="btn-style no-radius btn-modif"

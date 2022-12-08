@@ -46,12 +46,19 @@ input {
   border: 0px !important;
   letter-spacing: 1px !important;
 }
+input:focus {
+  outline: none !important;
+}
 textarea {
   padding: 10px !important;
   background-color: #404040 !important;
   border-radius: 0px !important;
   border: 0px !important;
   letter-spacing: 1px !important;
+  max-height: 268px;
+}
+textarea:focus {
+  outline: none !important;
 }
 ::placeholder {
   color: white !important;
@@ -125,6 +132,9 @@ button.btn.btn-primary {
   justify-content: center;
   align-items: center;
   height: calc(80vh - 44px) !important;
+}
+.letter-spacing {
+  letter-spacing: 0.2rem !important;
 }
 .show {
   display: flex !important;
