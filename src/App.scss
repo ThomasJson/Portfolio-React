@@ -34,6 +34,7 @@ h1 {
 }
 h2 {
   color: #25F4EE;
+  letter-spacing: 1px;
 }
 
 // ------ Form Styles -------
@@ -46,12 +47,19 @@ input {
   border: 0px !important;
   letter-spacing: 1px !important;
 }
+input:focus {
+  outline: none !important;
+}
 textarea {
   padding: 10px !important;
   background-color: #404040 !important;
   border-radius: 0px !important;
   border: 0px !important;
   letter-spacing: 1px !important;
+  max-height: 268px;
+}
+textarea:focus {
+  outline: none !important;
 }
 ::placeholder {
   color: white !important;
@@ -126,6 +134,9 @@ button.btn.btn-primary {
   align-items: center;
   height: calc(80vh - 44px) !important;
 }
+.letter-spacing {
+  letter-spacing: 1px !important;
+}
 .show {
   display: flex !important;
 }
@@ -136,12 +147,15 @@ button.btn.btn-primary {
 // ---------------------------------------- MEDIA QUERIES ----------------------------------------------------
 
 @media screen and (max-width: 650px) {
+
+  // ------- NAVBAR ---------
   #burger-menu {
     display: block !important;
   }
   .navBar.gap-4.nav {
     display: none !important;
   }
+  // ----- BLOG SCREEN -------
   .blog-container.container-fluid {
     display: flex;
     flex-direction: column !important;
@@ -149,11 +163,13 @@ button.btn.btn-primary {
     padding-left: 10px !important;
     padding-right: 10px !important;
   }
+  // ---- ARTICLE SCREEN -----
   img.img-spacing {
     float: none;
     width: 100% !important;
     margin-bottom: 10px !important;
   }
+  // ----- CONTACT SCREEN ----
   .contact-bloc {
     flex-direction: column !important;
   }
@@ -165,11 +181,27 @@ button.btn.btn-primary {
     height: 400px !important;
     margin-top: 10px !important;
   }
+  // ---- LOGIN/REGISTER ------
   .login-section {
     width: 90% !important;
   }
   .register-section {
     width: 90% !important;
+  }
+  // ---- ACCOUNT SCREEN ------
+  .infos-data {
+    display: flex;
+    flex-direction: column !important;
+  }
+  // -------- FOOTER ----------
+  .inspired {
+    display: none !important;
+  }
+  .copyright {
+    display: none !important;
+  }
+  div.socials-bloc.container-fluid {
+    width: 100% !important;
   }
 }
 

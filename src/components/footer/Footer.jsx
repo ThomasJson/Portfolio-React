@@ -8,8 +8,9 @@ import { NavLink } from "react-router-dom";
 const Footer = () => {
   return (
     <footer>
-      <Container fluid className="socials-bloc">
+      <p className="copyright">© 2022 Copyright: PY Thomas</p>
 
+      <Container fluid className="socials-bloc">
         <NavLink to="/">
           <Container className="socials">
             <BsFacebook />
@@ -27,13 +28,9 @@ const Footer = () => {
             <SiTiktok />
           </Container>
         </NavLink>
-
       </Container>
 
-      {/* <Container fluid className="copyright">
-        © 2022 Copyright: PY Thomas
-      </Container> */}
-
+      <p className="inspired">Inspiration from ...</p>
     </footer>
   );
 };
