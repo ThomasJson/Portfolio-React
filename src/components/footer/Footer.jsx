@@ -8,7 +8,7 @@ import { NavLink } from "react-router-dom";
 const Footer = () => {
   return (
     <footer>
-      <p className="copyright">© 2022 Copyright: PY Thomas</p>
+      <p className="copyright">© 2022 Copyright: Tom Pearson</p>
 
       <Container fluid className="socials-bloc">
         <NavLink to="/">
@@ -30,7 +30,7 @@ const Footer = () => {
         </NavLink>
       </Container>
 
-      <p className="inspired">Inspired by <span className="jack">Jack</span></p>
+      <p className="inspired">Inspired by <span className="jack bold">Jack</span></p>
     </footer>
   );
 };

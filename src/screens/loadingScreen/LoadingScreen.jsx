@@ -6,7 +6,7 @@ const LoadingScreen = () => {
   return (
     <main>
       <Container fluid className="center-bloc">
-        <p className="white">PHP is thinking ...</p>
+        <h2 className="letter-spacing">PHP is thinking ...</h2>
       </Container>
     </main>
   );

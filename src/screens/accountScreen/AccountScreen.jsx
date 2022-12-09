@@ -67,14 +67,16 @@ function AccountScreen() {
     <>
       <main>
         <Container fluid>
-          <h2>Paramètres du compte</h2>
+          <h2 className="letter-spacing mb-3 ">Paramètres du compte</h2>
 
           {/* ///////////// CHANGE PSEUDO ///////////////// */}
-          <Container fluid className="parametres-bloc">
+          <Container fluid className="parametres-bloc mt-2">
+            <p className="white letter-spacing mb-2">Pseudo :</p>
             <Container fluid className="infos-bloc">
               <Container fluid className="infos-data">
-                <p className="letter-spacing">Pseudo actuel :</p>
-                <p className="letter-spacing">{appUser?.data[0]?.with[0].pseudo}</p>
+                <p className="letter-spacing">
+                  {appUser?.data[0]?.with[0].pseudo}
+                </p>
               </Container>
               <Button
                 className="btn-style no-radius btn-modif"
@@ -112,10 +114,10 @@ function AccountScreen() {
           </Container>
 
           {/* ///////////// CHANGE EMAIL ///////////////// */}
-          <Container fluid className="parametres-bloc mt-2">
+          <Container fluid className="parametres-bloc mt-3">
+            <p className="white letter-spacing mb-2">Email :</p>
             <Container fluid className="infos-bloc">
               <Container fluid className="infos-data">
-                <p className="letter-spacing">Email actuel :</p>
                 <p className="letter-spacing">{appUser?.data[0]?.mail}</p>
               </Container>
               <Button
@@ -156,7 +158,7 @@ function AccountScreen() {
 
           {auth.role > 0 && (
             <Button
-              className="btn btn-primary btn-style2 no-radius mt-2"
+              className="btn btn-primary btn-style2 no-radius mt-3"
               onClick={(e) => {
                 setAuth({ role: 0, id: 0 });
                 deleteCookie("blog");
