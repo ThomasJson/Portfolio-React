@@ -30,7 +30,7 @@ const Footer = () => {
         </NavLink>
       </Container>
 
-      <p className="inspired">Inspiration from ...</p>
+      <p className="inspired">Inspired by <span className="jack">Jack</span></p>
     </footer>
   );
 };

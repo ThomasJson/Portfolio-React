@@ -87,7 +87,7 @@ const LoginScreen = () => {
               type="email"
               placeholder="Adresse e-mail"
               name="mail"
-              autocomplete="off"
+              autoComplete="off"
               onInput={() => {
                 const input = document.getElementById('email-input');
                 input.classList.add('onInput');

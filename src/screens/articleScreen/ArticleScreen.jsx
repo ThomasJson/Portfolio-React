@@ -154,7 +154,7 @@ const ArticleScreen = () => {
                     placeholder="Laissez un commentaire"
                     name="content"
                     className="w-100"
-                    autocomplete="off"
+                    autoComplete="off"
                     onInput={() => {
                       const input = document.getElementById("com-input");
                       input.classList.add("onInput");

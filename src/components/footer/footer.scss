@@ -22,16 +22,23 @@ footer {
     justify-content: space-around;
     margin: 0px !important;
 }
+.socials {
+    width: auto !important;
+}
+.socials:hover {
+    color: #25F4EE;
+}
 .inspired {
     margin: 0px !important;
     padding: 0px 12px 0px 12px;
     width: 35%;
     display: flex;
     justify-content: flex-end !important;
+    letter-spacing: 1px;
 }
-.socials {
-    width: auto !important;
-}
-.socials:hover {
+.jack {
+    margin-left: 3px;
     color: #25F4EE;
+    text-shadow: #fe2c55 0 -2px;
+    letter-spacing: 1px;
 }

@@ -42,7 +42,7 @@ const ContactScreen = () => {
                   type="text"
                   placeholder="Name"
                   id="name-contact"
-                  autocomplete="off"
+                  autoComplete="off"
                   onInput={() => {
                     const input = document.getElementById("name-contact");
                     input.classList.add("onInput");
@@ -54,7 +54,7 @@ const ContactScreen = () => {
                   type="email"
                   placeholder="Email"
                   id="email-contact"
-                  autocomplete="off"
+                  autoComplete="off"
                   onInput={() => {
                     const input = document.getElementById("email-contact");
                     input.classList.add("onInput");
@@ -66,7 +66,7 @@ const ContactScreen = () => {
                   type="text"
                   placeholder="Subject"
                   id="subject-contact"
-                  autocomplete="off"
+                  autoComplete="off"
                   onInput={() => {
                     const input = document.getElementById("subject-contact");
                     input.classList.add("onInput");
@@ -77,7 +77,7 @@ const ContactScreen = () => {
                 <textarea
                   placeholder="Message"
                   id="message-contact"
-                  autocomplete="off"
+                  autoComplete="off"
                   rows="6"
                   onInput={() => {
                     const input = document.getElementById("message-contact");
