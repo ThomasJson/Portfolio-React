@@ -38,13 +38,13 @@ const NavBar = () => {
 
           <Nav className="navBar gap-5">
             {auth.role === 4 && <NavLink to="/admin">Admin</NavLink>}
-            <NavLink to="/">
+            <NavLink to="/" className="menu-Itemz">
               <ImHome />
             </NavLink>
-            <NavLink to="/blog">
+            <NavLink to="/blog" className="menu-Itemz">
               <BiPlanet/>
             </NavLink>
-            <NavLink to="/contact">
+            <NavLink to="/contact" className="menu-Itemz">
               <BiPaperPlane/>
             </NavLink>
           </Nav>
