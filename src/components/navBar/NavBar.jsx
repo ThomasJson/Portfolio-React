@@ -2,6 +2,8 @@ import "./navBar.scss";
 import React, { useContext, useState, useEffect } from "react";
 import { Button, Container, Nav } from "react-bootstrap";
 import { BiLogInCircle, BiUserPlus } from "react-icons/bi";
+import { ImHome } from "react-icons/im";
+import { BiPlanet, BiPaperPlane } from "react-icons/bi";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 import OffCanvas from "./OffCanvas";
@@ -34,11 +36,17 @@ const NavBar = () => {
         <Container className="name-nav gap-4">
           <h2 className="name">Tom pearson</h2>
 
-          <Nav className="navBar gap-4">
+          <Nav className="navBar gap-5">
             {auth.role === 4 && <NavLink to="/admin">Admin</NavLink>}
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="/blog">Blog</NavLink>
-            <NavLink to="/contact">Contact</NavLink>
+            <NavLink to="/">
+              <ImHome />
+            </NavLink>
+            <NavLink to="/blog">
+              <BiPlanet/>
+            </NavLink>
+            <NavLink to="/contact">
+              <BiPaperPlane/>
+            </NavLink>
           </Nav>
         </Container>
 

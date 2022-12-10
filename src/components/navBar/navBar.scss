@@ -1,59 +1,69 @@
 .header {
-    width: 100%;
-    padding: 0px !important;
-    height: 10vh !important;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between !important;
-    align-items: center;
-    background-color: #242526 !important;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  overflow: hidden;
+
+  width: 100%;
+  padding: 0px !important;
+  height: 10vh !important;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between !important;
+  align-items: center;
+  background-color: #242526 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.399);
 }
 
 // ---------------------------------------------------------- LEFT BLOC -------------------------------------------------------------------
 .name-nav {
-    display: flex;
-    flex-direction: row;
-    margin: 0px !important;
-    padding: 0px !important;
+  display: flex;
+  flex-direction: row;
+  margin: 0px !important;
+  padding: 0px !important;
 }
 .name {
-    padding: 0px !important;
-    margin: 0px !important;
-    margin-left: 8px !important;
-    color: white;
+  padding: 0px !important;
+  margin: 0px !important;
+  margin-left: 8px !important;
+  color: white;
 }
 .navBar {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center;
-    margin-top: 11px;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .navBar a {
-    font-size: 1.1em;
+  font-size: 1.1em;
 }
 .navBar a:hover {
-    border-bottom: 1px solid white !important;
+  border-bottom: 1px solid white !important;
 }
 .navBar a:focus {
-    border-bottom: 1px solid white !important;
+  border-bottom: 1px solid white !important;
 }
 
 // ---------------------------------------------------------- RIGHT BLOC -------------------------------------------------------------------
 .btn-bloc {
-    padding: 0px !important;
-    margin: 0px !important;
-    max-width: 160px;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
+  padding: 0px !important;
+  margin: 0px !important;
+  max-width: 160px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 .btn-spacing {
-    margin-right: 8px !important;
+  margin-right: 8px !important;
 }
 .login-bloc {
-    width: auto !important;
-    padding: 0px !important;
-    margin: 0px !important;
-    display: flex;
-    flex-direction: row;
+  width: auto !important;
+  padding: 0px !important;
+  margin: 0px !important;
+  display: flex;
+  flex-direction: row;
 }

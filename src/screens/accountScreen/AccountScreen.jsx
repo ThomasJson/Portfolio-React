@@ -66,12 +66,12 @@ function AccountScreen() {
   return (
     <>
       <main>
-        <Container fluid>
-          <Container fluid className="background-bloc">
-            <h2 className="letter-spacing mb-4 ">Paramètres du compte</h2>
+        <Container fluid className="center-bloc">
+          <Container fluid className="params-section">
+            <h2 className="letter-spacing">Paramètres du compte</h2>
 
             {/* ///////////// CHANGE PSEUDO ///////////////// */}
-            <Container fluid className="parametres-bloc mt-2">
+            <Container fluid className="parametres-bloc mt-3">
               <p className="white letter-spacing mb-2">Pseudo :</p>
               <Container fluid className="infos-bloc">
                 <Container fluid className="infos-data">
@@ -118,7 +118,7 @@ function AccountScreen() {
             </Container>
 
             {/* ///////////// CHANGE EMAIL ///////////////// */}
-            <Container fluid className="parametres-bloc mt-2">
+            <Container fluid className="parametres-bloc mt-3">
               <p className="white letter-spacing mb-2">Email :</p>
               <Container fluid className="infos-bloc">
                 <Container fluid className="infos-data">
@@ -165,7 +165,7 @@ function AccountScreen() {
 
             {auth.role > 0 && (
               <Button
-                className="btn btn-primary btn-style2 no-radius mt-2 bold"
+                className="btn btn-primary btn-style2 no-radius mt-3 bold"
                 onClick={(e) => {
                   setAuth({ role: 0, id: 0 });
                   deleteCookie("blog");

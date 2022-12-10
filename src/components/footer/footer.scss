@@ -1,44 +1,50 @@
 footer {
-    height: 10vh;
-    width: 100% !important;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #242526 !important;
-    color: white;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  overflow: hidden;
+  height: 10vh;
+  width: 100% !important;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #242526 !important;
+  color: white;
+  border-top: 1px solid rgba(255, 255, 255, 0.399);
 }
 .copyright {
-    margin: 0px !important;
-    padding: 0px 12px 0px 12px;
-    width: 35%;
-    display: flex;
-    justify-content: flex-start !important;
+  margin: 0px !important;
+  padding: 0px 12px 0px 12px;
+  width: 35%;
+  display: flex;
+  justify-content: flex-start !important;
 }
 .socials-bloc {
-    width: 30% !important;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin: 0px !important;
+  width: 30% !important;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 0px !important;
 }
 .socials {
-    width: auto !important;
+  width: auto !important;
 }
 .socials:hover {
-    color: #25F4EE;
+  color: #25f4ee;
 }
 .inspired {
-    margin: 0px !important;
-    padding: 0px 12px 0px 12px;
-    width: 35%;
-    display: flex;
-    justify-content: flex-end !important;
-    letter-spacing: 1px;
+  margin: 0px !important;
+  padding: 0px 12px 0px 12px;
+  width: 35%;
+  display: flex;
+  justify-content: flex-end !important;
+  letter-spacing: 1px;
 }
 .jack {
-    margin-left: 3px;
-    color: #25F4EE;
-    text-shadow: #fe2c55 0 -2px;
-    letter-spacing: 1px;
+  margin-left: 3px;
+  color: #25f4ee;
+  text-shadow: #fe2c55 0 -2px;
+  letter-spacing: 1px;
 }
