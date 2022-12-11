@@ -4,6 +4,7 @@ import Button from "react-bootstrap/Button";
 import { Container } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import doFetch from "../../helpers/fetchHelper";
+import Footer from "../../components/footer/Footer";
 
 const RegisterScreen = () => {
   const {
@@ -26,92 +27,96 @@ const RegisterScreen = () => {
   };
 
   return (
-    <main>
-      <Container fluid className="center-bloc">
-        <Container fluid className="register-section">
-          <h2 className="mb-4">Inscription</h2>
-          <form
-            className="coL form-spacing"
-            onSubmit={handleSubmit(formSubmit, formInvalid)}
-            noValidate
-          >
-            <Container className="rOw betWeen">
+    <>
+      {" "}
+      <main>
+        <Container fluid className="center-bloc">
+          <Container fluid className="register-section">
+            <h2 className="mb-4">Inscription</h2>
+            <form
+              className="coL form-spacing"
+              onSubmit={handleSubmit(formSubmit, formInvalid)}
+              noValidate
+            >
+              <Container className="rOw betWeen">
+                <input
+                  id="firstName-input"
+                  className="input-spacing mb-3"
+                  type="text"
+                  placeholder="Prénom"
+                  name="firstName"
+                  autoComplete="off"
+                  onInput={() => {
+                    const input = document.getElementById("firstName-input");
+                    input.classList.add("onInput");
+                  }}
+                />
+                <input
+                  id="lastName-input"
+                  className="input-spacing mb-3"
+                  type="text"
+                  placeholder="Nom de famille"
+                  name="lastName"
+                  autoComplete="off"
+                  onInput={() => {
+                    const input = document.getElementById("lastName-input");
+                    input.classList.add("onInput");
+                  }}
+                />
+              </Container>
               <input
-                id="firstName-input"
-                className="input-spacing mb-3"
+                id="pseudo-input"
+                className="mb-3"
                 type="text"
-                placeholder="Prénom"
-                name="firstName"
+                placeholder="Pseudo *"
+                name="pseudo"
                 autoComplete="off"
                 onInput={() => {
-                  const input = document.getElementById("firstName-input");
+                  const input = document.getElementById("pseudo-input");
                   input.classList.add("onInput");
                 }}
+                {...register("pseudo", { required: true, minLength: 3 })}
               />
               <input
-                id="lastName-input"
-                className="input-spacing mb-3"
-                type="text"
-                placeholder="Nom de famille"
-                name="lastName"
+                id="mailAdress-input"
+                className="mb-3"
+                type="email"
+                placeholder="Adresse e-mail *"
+                name="mail"
                 autoComplete="off"
                 onInput={() => {
-                  const input = document.getElementById("lastName-input");
+                  const input = document.getElementById("mailAdress-input");
                   input.classList.add("onInput");
                 }}
+                {...register("mail", {
+                  required: true,
+                  pattern: /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/i,
+                })}
               />
-            </Container>
-            <input
-              id="pseudo-input"
-              className="mb-3"
-              type="text"
-              placeholder="Pseudo *"
-              name="pseudo"
-              autoComplete="off"
-              onInput={() => {
-                const input = document.getElementById("pseudo-input");
-                input.classList.add("onInput");
-              }}
-              {...register("pseudo", { required: true, minLength: 3 })}
-            />
-            <input
-              id="mailAdress-input"
-              className="mb-3"
-              type="email"
-              placeholder="Adresse e-mail *"
-              name="mail"
-              autoComplete="off"
-              onInput={() => {
-                const input = document.getElementById("mailAdress-input");
-                input.classList.add("onInput");
-              }}
-              {...register("mail", {
-                required: true,
-                pattern: /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/i,
-              })}
-            />
-            <label htmlFor="birthday" className="mb-1 white">
-              Date de naissance
-            </label>
-            <input
-              className="mb-3 letter-spacing white"
-              type="date"
-              id="birthday"
-              name="birthday"
-              autoComplete="off"
-              onInput={() => {
-                const input = document.getElementById("birthday");
-                input.classList.add("onInput");
-              }}
-            ></input>
+              <label htmlFor="birthday" className="mb-1 white">
+                Date de naissance
+              </label>
+              <input
+                className="mb-3 letter-spacing white"
+                type="date"
+                id="birthday"
+                name="birthday"
+                autoComplete="off"
+                onInput={() => {
+                  const input = document.getElementById("birthday");
+                  input.classList.add("onInput");
+                }}
+              ></input>
 
-            <Button type="submit" className="btn-style no-radius w-100">
-              S'inscrire
-            </Button>
-          </form>
+              <Button type="submit" className="btn-style no-radius w-100">
+                S'inscrire
+              </Button>
+            </form>
+          </Container>
         </Container>
-      </Container>
-    </main>
+      </main>
+      <Footer />
+    </>
   );
 };
 

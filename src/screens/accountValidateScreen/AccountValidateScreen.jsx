@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { useNavigate, useParams } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
 import doFetch from "../../helpers/fetchHelper";
+// import Footer from "../../components/footer/Footer";
 
 function AccountValidateScreen() {
   const token = useParams("token");

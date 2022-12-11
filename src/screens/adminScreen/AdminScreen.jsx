@@ -2,6 +2,7 @@ import "./adminScreen.scss";
 import React from "react";
 import { Container } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
+import Footer from "../../components/footer/Footer";
 
 function AdminScreen() {
 
@@ -26,6 +27,7 @@ function AdminScreen() {
           </Container>
         </Container>
       </main>
+      <Footer />
     </>
   );
 }

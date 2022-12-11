@@ -2,7 +2,7 @@ import "./navBar.scss";
 import React, { useContext, useState, useEffect } from "react";
 import { Button, Container, Nav } from "react-bootstrap";
 import { BiLogInCircle, BiUserPlus } from "react-icons/bi";
-import { ImHome } from "react-icons/im";
+import { FcElectroDevices } from "react-icons/fc";
 import { AiOutlineHome } from "react-icons/ai";
 import { BiPlanet, BiPaperPlane, BiCrown } from "react-icons/bi";
 import { NavLink } from "react-router-dom";

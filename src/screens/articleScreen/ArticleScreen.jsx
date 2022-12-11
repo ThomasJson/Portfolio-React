@@ -5,20 +5,22 @@ import { Button, Container } from "react-bootstrap";
 import Comment from "../../components/comment/Comment";
 import { AuthContext } from "../../contexts/AuthContext";
 import doFetch from "../../helpers/fetchHelper";
+import BlogFooter from "../../components/blogFooter/BlogFooter";
 
 const ArticleScreen = () => {
   const { id } = useParams();
 
   const [comments, setComments] = useState(null);
+  console.log('comments:', comments)
 
   const [pseudo, setPseudo] = useState(null);
-  console.log("pseudo:", pseudo);
+  // console.log("pseudo:", pseudo);
 
   const [article, setArticle] = useState(null);
-  console.log("article:", article);
+  // console.log("article:", article);
 
   const { auth } = useContext(AuthContext);
-  console.log("auth:", auth);
+  // console.log("auth:", auth);
 
   useEffect(() => {
     fetch("http://portfolio-api/comment/*", {
@@ -133,6 +135,7 @@ const ArticleScreen = () => {
           {/* // TODO .filter() */}
           {comments?.data.map((comment) => {
             if (comment.Id_article === id) {
+              
               return (
                 <div className="comment-section-bloc" key={comment.Id_comment}>
                   <Comment
@@ -180,6 +183,7 @@ const ArticleScreen = () => {
         </Container>
         </Container>
       </main>
+      <BlogFooter />
     </>
   );
 };

@@ -5,6 +5,8 @@ import { AuthContext } from "../../contexts/AuthContext";
 import { deleteCookie } from "../../helpers/cookieHelper";
 import { Button, Container } from "react-bootstrap";
 import doFetch from "../../helpers/fetchHelper";
+import Footer from "../../components/footer/Footer";
+
 
 function AccountScreen() {
   const [appUser, setAppUser] = useState(null);
@@ -178,6 +180,7 @@ function AccountScreen() {
           </Container>
         </Container>
       </main>
+      <Footer />
     </>
   );
 }
