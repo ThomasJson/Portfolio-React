@@ -120,6 +120,9 @@ button.btn.btn-primary {
   justify-content: center;
 }
 .align-center {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
   align-items: center !important;
 }
 .space-Evenly {

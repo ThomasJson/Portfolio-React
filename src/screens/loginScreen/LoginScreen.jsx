@@ -21,24 +21,9 @@ const LoginScreen = () => {
 
     const emailInput = document.getElementById("email-input");
     const emailPattern = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
-
     if (emailPattern.test(emailInput.value)) {
       isValid.email = true;
     }
-
-    ///////////////////////////////////////////////////////////////////////////
-
-    // if (!emailPattern.test(emailInput.value)) {
-    //   const infos = document.getElementById('infoWarning');
-    //   infos.classList.add('d-flex');
-    // }
-
-    // emailInput.addEventListener("change", () => {
-    //   const infos = document.getElementById("infoWarning");
-    //   infos.classList.add("d-flex");
-    // });
-
-    ///////////////////////////////////////////////////////////////////////////
 
     const passwordInput = document.getElementById("password-input");
     const passwordPattern = /^(?=.*[A-Z]).{6,}$/;

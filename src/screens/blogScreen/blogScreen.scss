@@ -1,6 +1,12 @@
-// .blog-background {
-//     background-color: #242526 !important;
-// }
+.blog-section {
+    width: 80% !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #242526 !important;
+    padding: 20px;
+}
 .blog-container.container-fluid {
     margin: 0px 0px 0px 0px !important;
     width: 100% !important;

@@ -35,7 +35,7 @@ const NavBar = () => {
     <>
       <Container fluid className="header">
         <Container className="name-nav">
-          <h2 className="name">Tom pearson</h2>
+          <h2 className="name">itsTom</h2>
 
           <Nav className="navBar">
             {auth.role === 4 && (
