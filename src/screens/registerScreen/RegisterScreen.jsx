@@ -29,7 +29,7 @@ const RegisterScreen = () => {
     <main>
       <Container fluid className="center-bloc">
         <Container fluid className="register-section">
-          <h2>Inscription</h2>
+          <h2 className="mb-4">Inscription</h2>
           <form
             className="coL form-spacing"
             onSubmit={handleSubmit(formSubmit, formInvalid)}

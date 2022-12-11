@@ -80,7 +80,7 @@ const LoginScreen = () => {
     <main>
       <Container fluid className="center-bloc">
         <Container fluid className="login-section">
-          <h2>Connexion</h2>
+          <h2 className="mb-4">Connexion</h2>
           <form onSubmit={handleSubmit} className="coL mb-2 gap-3 form-spacing" noValidate>
             <input
               id="email-input"
