@@ -31,7 +31,7 @@
 }
 .navBar {
   display: flex;
-  width: 35%;
+  width: 30%;
   flex-direction: row !important;
   justify-content: space-around;
   align-items: center;
@@ -42,6 +42,9 @@
 }
 .navBar svg {
   font-size: 1.7em;
+}
+.navBar svg:hover {
+  color: #25f4ee;
 }
 // .navBar a {
 //   text-decoration: underline 4px white;

@@ -112,7 +112,7 @@ const ArticleScreen = () => {
                     "category-text " + article?.data[0]?.with[1]?.title
                   }
                 >
-                  {article?.data[0]?.with[1]?.title}
+                  {article?.data[0]?.with[1]?.title + " I"}
                 </h1>
                 <h2>{article?.data[0]?.title}</h2>
               </Container>
