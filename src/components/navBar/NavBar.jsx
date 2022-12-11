@@ -3,7 +3,7 @@ import React, { useContext, useState, useEffect } from "react";
 import { Button, Container, Nav } from "react-bootstrap";
 import { BiLogInCircle, BiUserPlus } from "react-icons/bi";
 import { ImHome } from "react-icons/im";
-import { BiPlanet, BiPaperPlane } from "react-icons/bi";
+import { BiPlanet, BiPaperPlane, BiCrown } from "react-icons/bi";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 import OffCanvas from "./OffCanvas";
@@ -37,15 +37,19 @@ const NavBar = () => {
           <h2 className="name">Tom pearson</h2>
 
           <Nav className="navBar gap-5">
-            {auth.role === 4 && <NavLink to="/admin">Admin</NavLink>}
+            {auth.role === 4 && (
+              <NavLink to="/admin">
+                <BiCrown />
+              </NavLink>
+            )}
             <NavLink to="/" className="menu-Itemz">
               <ImHome />
             </NavLink>
             <NavLink to="/blog" className="menu-Itemz">
-              <BiPlanet/>
+              <BiPlanet />
             </NavLink>
             <NavLink to="/contact" className="menu-Itemz">
-              <BiPaperPlane/>
+              <BiPaperPlane />
             </NavLink>
           </Nav>
         </Container>

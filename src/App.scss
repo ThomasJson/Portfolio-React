@@ -62,7 +62,8 @@ textarea {
   border-radius: 0px !important;
   border: 0px !important;
   letter-spacing: 1px !important;
-  max-height: 268px;
+  min-height: 150px;
+  max-height: 200px;
 }
 textarea:focus {
   outline: none !important;
@@ -82,12 +83,12 @@ textarea:focus {
 button.btn.btn-primary {
   background-color: #404040;
   border-color: #404040 !important;
-  border-radius: 5px;
+  border-radius: 0px;
   padding: 8px !important;
   letter-spacing: 1px;
 }
 .btn-style {
-  color: #25f4ee !important;
+  color: white !important;
   font-size: 1.1em !important;
 }
 .btn-style:hover {
@@ -95,13 +96,13 @@ button.btn.btn-primary {
   background-color: #25f4ed1d !important;
 }
 .btn-style2 {
-  color: #fe2c55 !important;
+  color: rgba(255, 255, 255, 0.434) !important;
   background-color: #fe2c561c !important;
   letter-spacing: 1px !important;
   border: 0px !important;
 }
 .btn-style2:hover {
-  color: #fe2c55 !important;
+  color: rgba(255, 255, 255, 0.807) !important;
   background-color: #fe2c5661 !important;
 }
 
@@ -141,7 +142,11 @@ button.btn.btn-primary {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  min-height: 100%;
+  padding: 0px !important;
+  width: 70% !important;
+  // border: 1px solid rgba(255, 255, 255, 0.399);
+  // border: 1px solid #25f4ee;
 }
 .letter-spacing {
   letter-spacing: 1px !important;
@@ -166,6 +171,11 @@ button.btn.btn-primary {
   .navBar.gap-5.nav {
     display: none !important;
   }
+  // ----- CENTER BLOC -------
+  .center-bloc {
+    width: 90% !important;
+  }
+
   // ----- BLOG SCREEN -------
   .blog-container.container-fluid {
     display: flex;
@@ -201,6 +211,9 @@ button.btn.btn-primary {
     width: 90% !important;
   }
   // ---- ACCOUNT SCREEN ------
+  div.params-section.container-fluid {
+    width: 100% !important;
+  }
   .infos-data {
     display: flex;
     flex-direction: column !important;

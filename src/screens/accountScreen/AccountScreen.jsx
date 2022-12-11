@@ -169,7 +169,7 @@ function AccountScreen() {
                 onClick={(e) => {
                   setAuth({ role: 0, id: 0 });
                   deleteCookie("blog");
-                  window.location.href = "/";
+                  window.location.href = "/login";
                 }}
               >
                 Déconnexion
