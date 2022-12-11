@@ -23,29 +23,31 @@ const BlogScreen = () => {
 
   return (
     <main>
-      <Container fluid className="blog-container">
-        {data &&
-          data?.data.map((article) => {
-            return (
-              <div
-                key={article.Id_article}
-                onClick={() => {
-                  navigate(`/article/${article.Id_article}`);
-                }}
-                className="article-spacing"
-              >
-                <Article
-                  title={article.title}
-                  content={article.content}
-                  src={article.with[0]?.src}
-                  alt={article.with[0]?.alt}
-                  category={article.with[1]?.title}
-                  color={article.with[1]?.title}
-                  border={article.with[1]?.title}
-                />
-              </div>
-            );
-          })}
+      <Container fluid className="blog-background">
+        <Container fluid className="blog-container">
+          {data &&
+            data?.data.map((article) => {
+              return (
+                <div
+                  key={article.Id_article}
+                  onClick={() => {
+                    navigate(`/article/${article.Id_article}`);
+                  }}
+                  className="article-spacing"
+                >
+                  <Article
+                    title={article.title}
+                    content={article.content}
+                    src={article.with[0]?.src}
+                    alt={article.with[0]?.alt}
+                    category={article.with[1]?.title}
+                    color={article.with[1]?.title}
+                    border={article.with[1]?.title}
+                  />
+                </div>
+              );
+            })}
+        </Container>
       </Container>
     </main>
   );

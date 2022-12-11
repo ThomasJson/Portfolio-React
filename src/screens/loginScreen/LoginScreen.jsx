@@ -70,7 +70,7 @@ const LoginScreen = () => {
     if (data?.data?.result) {
       setAuth({ role: +data.data?.role, id: data.data?.id });
       setCookie("blog", data.data?.token, { "max-age": 60 * 60 * 24 });
-      navigate("/blog");
+      navigate("/account");
     } else {
       setAuth({ role: 0, id: "0" });
       deleteCookie("blog");
@@ -87,7 +87,7 @@ const LoginScreen = () => {
               type="email"
               placeholder="Adresse e-mail"
               name="mail"
-              autocomplete="off"
+              autoComplete="off"
               onInput={() => {
                 const input = document.getElementById('email-input');
                 input.classList.add('onInput');

@@ -42,7 +42,7 @@ const RegisterScreen = () => {
                 type="text"
                 placeholder="Prénom"
                 name="firstName"
-                autocomplete="off"
+                autoComplete="off"
                 onInput={() => {
                   const input = document.getElementById("firstName-input");
                   input.classList.add("onInput");
@@ -54,7 +54,7 @@ const RegisterScreen = () => {
                 type="text"
                 placeholder="Nom de famille"
                 name="lastName"
-                autocomplete="off"
+                autoComplete="off"
                 onInput={() => {
                   const input = document.getElementById("lastName-input");
                   input.classList.add("onInput");
@@ -67,7 +67,7 @@ const RegisterScreen = () => {
               type="text"
               placeholder="Pseudo *"
               name="pseudo"
-              autocomplete="off"
+              autoComplete="off"
               onInput={() => {
                 const input = document.getElementById("pseudo-input");
                 input.classList.add("onInput");
@@ -80,7 +80,7 @@ const RegisterScreen = () => {
               type="email"
               placeholder="Adresse e-mail *"
               name="mail"
-              autocomplete="off"
+              autoComplete="off"
               onInput={() => {
                 const input = document.getElementById("mailAdress-input");
                 input.classList.add("onInput");
@@ -98,7 +98,7 @@ const RegisterScreen = () => {
               type="date"
               id="birthday"
               name="birthday"
-              autocomplete="off"
+              autoComplete="off"
               onInput={() => {
                 const input = document.getElementById("birthday");
                 input.classList.add("onInput");

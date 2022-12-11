@@ -66,106 +66,116 @@ function AccountScreen() {
   return (
     <>
       <main>
-        <Container fluid>
-          <h2>Paramètres du compte</h2>
+        <Container fluid className="center-bloc">
+          <Container fluid className="params-section">
+            <h2 className="letter-spacing">Paramètres du compte</h2>
 
-          {/* ///////////// CHANGE PSEUDO ///////////////// */}
-          <Container fluid className="parametres-bloc">
-            <Container fluid className="infos-bloc">
-              <Container fluid className="infos-data">
-                <p className="letter-spacing">Pseudo actuel :</p>
-                <p className="letter-spacing">{appUser?.data[0]?.with[0].pseudo}</p>
-              </Container>
-              <Button
-                className="btn-style no-radius btn-modif"
-                onClick={() => setNewPseudo(!newPseudo)}
-              >
-                Modif
-              </Button>
-            </Container>
-            {newPseudo && (
-              <form onSubmit={handlePseudoSubmit} className="modif-data-bloc">
-                <input
-                  type="text"
-                  placeholder="Nouveau Pseudo"
-                  id="nouveau-pseudo"
-                  className="account-input"
-                  autoComplete="off"
-                  onInput={() => {
-                    const input = document.getElementById("nouveau-pseudo");
-                    input.classList.add("onInput");
-                  }}
-                />
-                <Container fluid className="cancel-validate">
-                  <Button
-                    className="btn-style2 no-radius btn-xv"
-                    onClick={() => setNewPseudo(!newPseudo)}
-                  >
-                    X
-                  </Button>
-                  <Button className="btn-style no-radius btn-xv" type="submit">
-                    V
-                  </Button>
+            {/* ///////////// CHANGE PSEUDO ///////////////// */}
+            <Container fluid className="parametres-bloc mt-3">
+              <p className="white letter-spacing mb-2">Pseudo :</p>
+              <Container fluid className="infos-bloc">
+                <Container fluid className="infos-data">
+                  <p className="letter-spacing">
+                    {appUser?.data[0]?.with[0].pseudo}
+                  </p>
                 </Container>
-              </form>
-            )}
-          </Container>
-
-          {/* ///////////// CHANGE EMAIL ///////////////// */}
-          <Container fluid className="parametres-bloc mt-2">
-            <Container fluid className="infos-bloc">
-              <Container fluid className="infos-data">
-                <p className="letter-spacing">Email actuel :</p>
-                <p className="letter-spacing">{appUser?.data[0]?.mail}</p>
+                <Button
+                  className="btn-style no-radius btn-modif"
+                  onClick={() => setNewPseudo(!newPseudo)}
+                >
+                  Modif
+                </Button>
               </Container>
-              <Button
-                className="btn-style no-radius btn-modif"
-                onClick={() => setNewMail(!newMail)}
-              >
-                Modif
-              </Button>
+              {newPseudo && (
+                <form onSubmit={handlePseudoSubmit} className="modif-data-bloc">
+                  <input
+                    type="text"
+                    placeholder="Nouveau Pseudo"
+                    id="nouveau-pseudo"
+                    className="account-input"
+                    autoComplete="off"
+                    onInput={() => {
+                      const input = document.getElementById("nouveau-pseudo");
+                      input.classList.add("onInput");
+                    }}
+                  />
+                  <Container fluid className="cancel-validate">
+                    <Button
+                      className="btn-style2 no-radius btn-xv"
+                      onClick={() => setNewPseudo(!newPseudo)}
+                    >
+                      X
+                    </Button>
+                    <Button
+                      className="btn-style no-radius btn-xv"
+                      type="submit"
+                    >
+                      V
+                    </Button>
+                  </Container>
+                </form>
+              )}
             </Container>
 
-            {newMail && (
-              <form onSubmit={handleEmailSubmit} className="modif-data-bloc">
-                <input
-                  type="text"
-                  placeholder="Nouvelle Adresse Email"
-                  id="nouveau-mail"
-                  className="account-input"
-                  autoComplete="off"
-                  onInput={() => {
-                    const input = document.getElementById("nouveau-mail");
-                    input.classList.add("onInput");
-                  }}
-                />
-                <Container fluid className="cancel-validate">
-                  <Button
-                    className="btn-style2 no-radius btn-xv"
-                    onClick={() => setNewMail(!newMail)}
-                  >
-                    X
-                  </Button>
-                  <Button className="btn-style no-radius btn-xv" type="submit">
-                    V
-                  </Button>
+            {/* ///////////// CHANGE EMAIL ///////////////// */}
+            <Container fluid className="parametres-bloc mt-3">
+              <p className="white letter-spacing mb-2">Email :</p>
+              <Container fluid className="infos-bloc">
+                <Container fluid className="infos-data">
+                  <p className="letter-spacing">{appUser?.data[0]?.mail}</p>
                 </Container>
-              </form>
+                <Button
+                  className="btn-style no-radius btn-modif"
+                  onClick={() => setNewMail(!newMail)}
+                >
+                  Modif
+                </Button>
+              </Container>
+
+              {newMail && (
+                <form onSubmit={handleEmailSubmit} className="modif-data-bloc">
+                  <input
+                    type="text"
+                    placeholder="Nouvelle Adresse Email"
+                    id="nouveau-mail"
+                    className="account-input"
+                    autoComplete="off"
+                    onInput={() => {
+                      const input = document.getElementById("nouveau-mail");
+                      input.classList.add("onInput");
+                    }}
+                  />
+                  <Container fluid className="cancel-validate">
+                    <Button
+                      className="btn-style2 no-radius btn-xv"
+                      onClick={() => setNewMail(!newMail)}
+                    >
+                      X
+                    </Button>
+                    <Button
+                      className="btn-style no-radius btn-xv"
+                      type="submit"
+                    >
+                      V
+                    </Button>
+                  </Container>
+                </form>
+              )}
+            </Container>
+
+            {auth.role > 0 && (
+              <Button
+                className="btn btn-primary btn-style2 no-radius mt-3 bold"
+                onClick={(e) => {
+                  setAuth({ role: 0, id: 0 });
+                  deleteCookie("blog");
+                  window.location.href = "/login";
+                }}
+              >
+                Déconnexion
+              </Button>
             )}
           </Container>
-
-          {auth.role > 0 && (
-            <Button
-              className="btn btn-primary btn-style2 no-radius mt-2"
-              onClick={(e) => {
-                setAuth({ role: 0, id: 0 });
-                deleteCookie("blog");
-                window.location.href = "/";
-              }}
-            >
-              Log out
-            </Button>
-          )}
         </Container>
       </main>
     </>
