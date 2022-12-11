@@ -99,32 +99,42 @@ const ArticleScreen = () => {
   return (
     <>
       <main>
-        <Container fluid className="singleArticle-container">
-          <Container
-            fluid
-            className={"article-bg " + article?.data[0]?.with[1]?.title}
-          >
-            <h1 className={"category-text " + article?.data[0]?.with[1]?.title}>
-              {article?.data[0]?.with[1]?.title}
-            </h1>
-            <h2>{article?.data[0]?.title}</h2>
-            <Container fluid className="image-content-bloc">
-              <img
-                src={article?.data[0]?.with[0]?.src}
-                alt={article?.data[0]?.with[0]?.alt}
-                className="img-spacing"
-              />
-              <p className="content">{article?.data[0]?.content}</p>
+
+        <Container fluid className="singleArticle-section">
+          <Container fluid className="singleArticle-container">
+            <Container
+              fluid
+              className={"article-bg " + article?.data[0]?.with[1]?.title}
+            >
+              <Container className="align-category-title">
+                <h1
+                  className={
+                    "category-text " + article?.data[0]?.with[1]?.title
+                  }
+                >
+                  {article?.data[0]?.with[1]?.title}
+                </h1>
+                <h2>{article?.data[0]?.title}</h2>
+              </Container>
+
+              <Container fluid className="image-content-bloc">
+                {/* <img
+                  src={article?.data[0]?.with[0]?.src}
+                  alt={article?.data[0]?.with[0]?.alt}
+                  className="img-spacing"
+                /> */}
+                <p className="content">{article?.data[0]?.content}</p>
+              </Container>
             </Container>
           </Container>
-        </Container>
+        
 
         <Container fluid className="comments-bloc">
           {/* // TODO .filter() */}
           {comments?.data.map((comment) => {
             if (comment.Id_article === id) {
               return (
-                <div key={comment.Id_comment}>
+                <div className="comment-section-bloc" key={comment.Id_comment}>
                   <Comment
                     content={comment.content}
                     author={comment?.with[0]?.pseudo}
@@ -167,6 +177,7 @@ const ArticleScreen = () => {
               </Container>
             </form>
           )}
+        </Container>
         </Container>
       </main>
     </>
