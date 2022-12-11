@@ -72,7 +72,7 @@ function AccountScreen() {
 
             {/* ///////////// CHANGE PSEUDO ///////////////// */}
             <Container fluid className="parametres-bloc mt-3">
-              <p className="white letter-spacing mb-2">Pseudo :</p>
+              <p className="white letter-spacing mb-2 text-align-center">Pseudo</p>
               <Container fluid className="infos-bloc">
                 <Container fluid className="infos-data">
                   <p className="letter-spacing">
@@ -119,7 +119,7 @@ function AccountScreen() {
 
             {/* ///////////// CHANGE EMAIL ///////////////// */}
             <Container fluid className="parametres-bloc mt-3">
-              <p className="white letter-spacing mb-2">Email :</p>
+              <p className="white letter-spacing mb-2 text-align-center">Mail</p>
               <Container fluid className="infos-bloc">
                 <Container fluid className="infos-data">
                   <p className="letter-spacing">{appUser?.data[0]?.mail}</p>
@@ -136,7 +136,7 @@ function AccountScreen() {
                 <form onSubmit={handleEmailSubmit} className="modif-data-bloc">
                   <input
                     type="text"
-                    placeholder="Nouvelle Adresse Email"
+                    placeholder="Nouveau Mail"
                     id="nouveau-mail"
                     className="account-input"
                     autoComplete="off"
@@ -165,7 +165,7 @@ function AccountScreen() {
 
             {auth.role > 0 && (
               <Button
-                className="btn btn-primary btn-style2 no-radius mt-3 bold"
+                className="btn btn-primary btn-style2 no-radius mt-3 btn-deco"
                 onClick={(e) => {
                   setAuth({ role: 0, id: 0 });
                   deleteCookie("blog");

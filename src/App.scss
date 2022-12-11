@@ -160,7 +160,9 @@ button.btn.btn-primary {
 .bold {
   font-weight: bold !important;
 }
-
+.text-align-center {
+  text-align: center;
+}
 // ---------------------------------------- MEDIA QUERIES ----------------------------------------------------
 
 @media screen and (max-width: 690px) {
@@ -168,7 +170,7 @@ button.btn.btn-primary {
   #burger-menu {
     display: block !important;
   }
-  .navBar.gap-5.nav {
+  .navBar.nav {
     display: none !important;
   }
   // ----- CENTER BLOC -------

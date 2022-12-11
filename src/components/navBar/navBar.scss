@@ -31,14 +31,18 @@
 }
 .navBar {
   display: flex;
+  width: 35%;
   flex-direction: row !important;
+  justify-content: space-around;
   align-items: center;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
+.navBar svg {
+  font-size: 1.7em;
+}
 // .navBar a {
 //   text-decoration: underline 4px white;
 //   text-underline-offset: 0.2em;
