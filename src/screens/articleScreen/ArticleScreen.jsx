@@ -11,7 +11,7 @@ const ArticleScreen = () => {
   const { id } = useParams();
 
   const [comments, setComments] = useState(null);
-  console.log('comments:', comments)
+  console.log("comments:", comments);
 
   const [pseudo, setPseudo] = useState(null);
   // console.log("pseudo:", pseudo);
@@ -101,9 +101,8 @@ const ArticleScreen = () => {
   return (
     <>
       <main>
-
-        <Container fluid className="singleArticle-section">
-          <Container fluid className="singleArticle-container">
+        <div className="singleArticle-section">
+          <div className="singleArticle-container">
             <Container
               fluid
               className={"article-bg " + article?.data[0]?.with[1]?.title}
@@ -128,60 +127,65 @@ const ArticleScreen = () => {
                 <p className="content">{article?.data[0]?.content}</p>
               </Container>
             </Container>
-          </Container>
-        
+          </div>
 
-        <Container fluid className="comments-bloc">
-          {/* // TODO .filter() */}
-          {comments?.data.map((comment) => {
-            if (comment.Id_article === id) {
-              
-              return (
-                <div className="comment-section-bloc" key={comment.Id_comment}>
-                  <Comment
-                    content={comment.content}
-                    author={comment?.with[0]?.pseudo}
-                    date={comment.created_at}
-                    border={article?.data[0]?.with[1]?.title}
-                  />
-                </div>
-              );
-            }
-          })}
+          <div className="comments-bloc">
+            {/* // TODO .filter() */}
+            {comments?.data.map((comment) => {
+              if (comment.Id_article === id) {
+                return (
+                  <div
+                    className="comment-section-bloc"
+                    key={comment.Id_comment}
+                  >
+                    <Comment
+                      content={comment.content}
+                      author={comment?.with[0]?.pseudo}
+                      date={comment.created_at}
+                      border={article?.data[0]?.with[1]?.title}
+                    />
+                  </div>
+                );
+              }
+            })}
 
-          {auth.role > 0 && (
-            <form onSubmit={handleSubmit}>
-              <Container
-                fluid
-                className={
-                  "comment-container " + article?.data[0]?.with[1]?.title
-                }
-              >
-                <Container className="aquamarine">
-                  {pseudo?.data[0]?.with[0]?.pseudo}
+            {auth.role > 0 && (
+              <form onSubmit={handleSubmit}>
+                <Container
+                  fluid
+                  className={
+                    "comment-container " + article?.data[0]?.with[1]?.title
+                  }
+                >
+                  {/* <Container className="aquamarine">
+                    {pseudo?.data[0]?.with[0]?.pseudo}
+                  </Container> */}
+                  <div className="align-input-btn">
+                    <div fluid className="comment-input">
+                      <input
+                        id="com-input"
+                        type="text"
+                        placeholder="Laissez un commentaire"
+                        name="content"
+                        autoComplete="off"
+                        onInput={() => {
+                          const input = document.getElementById("com-input");
+                          input.classList.add("onInput");
+                        }}
+                      />
+                    </div>
+                    <Button
+                      type="submit"
+                      className="btn-style no-radius btn-post"
+                    >
+                      Poster
+                    </Button>
+                  </div>
                 </Container>
-                <Container fluid className="comment-content mt-1">
-                  <input
-                    id="com-input"
-                    type="text"
-                    placeholder="Laissez un commentaire"
-                    name="content"
-                    className="w-100"
-                    autoComplete="off"
-                    onInput={() => {
-                      const input = document.getElementById("com-input");
-                      input.classList.add("onInput");
-                    }}
-                  />
-                </Container>
-                <Button type="submit" className="btn-style no-radius mt-2">
-                  Poster
-                </Button>
-              </Container>
-            </form>
-          )}
-        </Container>
-        </Container>
+              </form>
+            )}
+          </div>
+        </div>
       </main>
       <BlogFooter />
     </>
