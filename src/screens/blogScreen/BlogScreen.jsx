@@ -29,6 +29,7 @@ const BlogScreen = () => {
           <Container fluid className="blog-section">
             {/* <h2>Articles</h2> */}
             <Container fluid className="blog-container">
+              
               {data &&
                 data?.data.map((article) => {
                   return (
@@ -51,6 +52,7 @@ const BlogScreen = () => {
                     </div>
                   );
                 })}
+                
             </Container>
           </Container>
         </Container>

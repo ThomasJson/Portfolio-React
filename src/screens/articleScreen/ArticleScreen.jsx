@@ -133,6 +133,7 @@ const ArticleScreen = () => {
 
           <div className="comments-bloc">
             {/* // TODO .filter() */}
+            
             {comments?.data.map((comment) => {
               if (comment.Id_article === id) {
                 return (
