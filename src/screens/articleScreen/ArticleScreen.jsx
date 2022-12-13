@@ -8,6 +8,8 @@ import doFetch from "../../helpers/fetchHelper";
 import BlogFooter from "../../components/blogFooter/BlogFooter";
 
 const ArticleScreen = () => {
+
+  // 👑
   const { id } = useParams();
 
   const [comments, setComments] = useState(null);

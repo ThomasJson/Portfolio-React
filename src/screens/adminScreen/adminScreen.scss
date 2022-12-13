@@ -1,12 +1,12 @@
-.admin-title {
-    text-align: center;
-    font-weight: bold;
-    color: whitesmoke;
+.admin-bloc {
+  padding: 20px;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #242526 !important;
 }
 .admin-nav {
-    margin-top: 200px !important;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
 }
