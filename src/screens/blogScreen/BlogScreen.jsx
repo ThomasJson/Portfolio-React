@@ -27,7 +27,6 @@ const BlogScreen = () => {
       <main>
         <Container fluid className="align-center">
           <Container fluid className="blog-section">
-            {/* <h2>Articles</h2> */}
             <Container fluid className="blog-container">
               
               {data &&

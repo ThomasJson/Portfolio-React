@@ -16,21 +16,21 @@ const NavBar = () => {
 
   const { auth } = useContext(AuthContext);
 
-  // useEffect(() => {
-  //   fetch("http://portfolio-api/app_user/" + auth.id, {
-  //     method: "POST",
-  //     body: JSON.stringify({
-  //       with: ["account"],
-  //     }),
-  //   })
-  //     .then((resp) => {
-  //       return resp.json();
-  //     })
+  useEffect(() => {
+    fetch("http://portfolio-api/app_user/" + auth.id, {
+      method: "POST",
+      body: JSON.stringify({
+        with: ["account"],
+      }),
+    })
+      .then((resp) => {
+        return resp.json();
+      })
 
-  //     .then((json) => {
-  //       setPseudo(json);
-  //     });
-  // }, [auth]);
+      .then((json) => {
+        setPseudo(json);
+      });
+  }, [auth]);
 
   return (
     <>
@@ -66,9 +66,9 @@ const NavBar = () => {
           <Container fluid className="login-bloc">
             {auth.role > 0 && (
               <NavLink to="/account">
-                {/* <Button className="btn-spacing btn-style bold">
+                <Button className="btn-spacing btn-style bold">
                   {pseudo?.data[0]?.with[0].pseudo}
-                </Button> */}
+                </Button>
               </NavLink>
             )}
 
