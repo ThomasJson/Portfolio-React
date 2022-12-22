@@ -1,7 +1,7 @@
 import "./adminScreen.scss";
 import React from "react";
 import { Container } from "react-bootstrap";
-import { NavLink } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
 import Footer from "../../components/footer/Footer";
 
 function AdminScreen() {
@@ -9,28 +9,24 @@ function AdminScreen() {
     <>
       <main>
         <Container fluid className="center-bloc">
-          {/* <div className="align-center"> */}
           <div fluid className="admin-bloc">
-            <h2 className="admin-title">God Mode</h2>
+            <h2 className="admin-title mb-4">God Mode</h2>
 
             <Container fluid className="admin-nav gap-3">
-              <button className="btn-spacing btn btn-primary">
+              <button className="btn-spacing btn btn-primary btn-style">
                 Gestion des Utilisateurs
               </button>
 
-              {/* <NavLink to="/admin/modifArticle"> */}
-                <button className="btn-spacing btn btn-primary">
+                <button className="btn-spacing btn btn-primary btn-style">
                   Gestion des Articles
                 </button>
-              {/* </NavLink> */}
 
-              <button className="btn-spacing btn btn-primary">
+              <button className="btn-spacing btn btn-primary btn-style">
                 Modération des Coms
               </button>
             </Container>
           </div>
         </Container>
-        {/* </div> */}
       </main>
       <Footer />
     </>

@@ -46,12 +46,12 @@ const NavBar = () => {
 
           <Nav className="navBar">
             {auth.role === 4 && (
-              <NavLink to="/admin">
+              <NavLink to="/admin" className="menu-Itemz">
                 <BiCrown />
               </NavLink>
             )}
             <NavLink to="/" className="menu-Itemz">
-              <AiOutlineHome className="white" />
+              <AiOutlineHome />
             </NavLink>
             <NavLink to="/blog" className="menu-Itemz">
               <BiPlanet />

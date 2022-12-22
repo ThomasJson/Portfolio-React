@@ -184,14 +184,11 @@ button.btn.btn-primary {
   // ----- BLOG SCREEN -------
   div.blog-section.container-fluid {
     margin-top: 450px !important;
-    // background-color: red !important;
   }
   .blog-container.container-fluid {
     display: flex;
     flex-direction: column !important;
     align-items: center !important;
-    // padding-left: 10px !important;
-    // padding-right: 10px !important;
     padding: 0px 10px 0px 10px !important
   }
   // ---- ARTICLE SCREEN -----
@@ -248,6 +245,10 @@ button.btn.btn-primary {
   .infos-data {
     display: flex;
     flex-direction: column !important;
+  }
+  // ----- ADMIN SCREEN -------
+  .admin-bloc {
+    width: 75% !important;
   }
   // -------- FOOTER ----------
   .inspired {
