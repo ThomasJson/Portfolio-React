@@ -36,7 +36,7 @@ const NavBar = () => {
     <>
       <Container fluid className="header">
         <Container className="name-nav">
-          <h2 className="name">itsTom</h2>
+          <h2 className="name">T</h2>
 
           {/* <div>
             <video controls>

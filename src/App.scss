@@ -180,6 +180,24 @@ button.btn.btn-primary {
   .center-bloc {
     width: 100% !important;
   }
+  // ----- HOME SCREEN -------
+  .home-section {
+    display: flex;
+    flex-direction: column !important;
+  }
+  .presentation {
+    width: 100% !important;
+  }
+  .btn-width {
+    width: 35% !important;
+  }
+  .three-js-bloc {
+    width: 100% !important;
+    margin-top: 10px !important;
+  }
+  .img-dimension {
+    width: 280px !important;
+  }
 
   // ----- BLOG SCREEN -------
   div.blog-section.container-fluid {
@@ -189,12 +207,11 @@ button.btn.btn-primary {
     display: flex;
     flex-direction: column !important;
     align-items: center !important;
-    padding: 0px 10px 0px 10px !important
+    padding: 0px 10px 0px 10px !important;
   }
   // ---- ARTICLE SCREEN -----
   .singleArticle-section {
     flex-direction: column !important;
-    margin: 0px !important;
   }
   .singleArticle-container {
     width: 100% !important;
