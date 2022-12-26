@@ -2,7 +2,7 @@ import "./accountScreen.scss";
 import React, { useEffect, useState } from "react";
 import { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
-import { deleteCookie } from "../../helpers/cookieHelper";
+import { deleteCookie, getCookie } from "../../helpers/cookieHelper";
 import { Button, Container } from "react-bootstrap";
 import doFetch from "../../helpers/fetchHelper";
 import Footer from "../../components/footer/Footer";
@@ -18,6 +18,9 @@ function AccountScreen() {
   useEffect(() => {
     fetch("http://portfolio-api/app_user/" + auth.id, {
       method: "POST",
+      headers: {
+        Authorization: getCookie("blog")
+      },
       body: JSON.stringify({
         with: ["account"],
       }),

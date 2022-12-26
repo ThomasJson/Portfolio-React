@@ -6,6 +6,7 @@ import Comment from "../../components/comment/Comment";
 import { AuthContext } from "../../contexts/AuthContext";
 import doFetch from "../../helpers/fetchHelper";
 import BlogFooter from "../../components/blogFooter/BlogFooter";
+import { getCookie } from "../../helpers/cookieHelper";
 
 const ArticleScreen = () => {
 
@@ -43,6 +44,9 @@ const ArticleScreen = () => {
   useEffect(() => {
     fetch("http://portfolio-api/app_user/" + auth.id, {
       method: "POST",
+      headers: {
+        Authorization: getCookie("blog")
+      },
       body: JSON.stringify({
         with: ["account"],
       }),
@@ -59,6 +63,9 @@ const ArticleScreen = () => {
   useEffect(() => {
     fetch("http://portfolio-api/article/" + id, {
       method: "POST",
+      headers: {
+        Authorization: getCookie("blog")
+      },
       body: JSON.stringify({
         with: ["image", "category"],
       }),
@@ -85,6 +92,9 @@ const ArticleScreen = () => {
 
     const { data } = await doFetch("comment", {
       method: "PUT",
+      headers: {
+        Authorization: getCookie("blog")
+      },
       body: JSON.stringify({
         items: [
           {

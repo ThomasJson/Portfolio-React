@@ -8,6 +8,7 @@ import { BiPlanet, BiPaperPlane, BiCrown } from "react-icons/bi";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 import OffCanvas from "./OffCanvas";
+import { getCookie } from "../../helpers/cookieHelper";
 // import video from "./T_glitch.flv";
 
 const NavBar = () => {
@@ -19,6 +20,9 @@ const NavBar = () => {
   useEffect(() => {
     fetch("http://portfolio-api/app_user/" + auth.id, {
       method: "POST",
+      headers: {
+        Authorization: getCookie("blog")
+      },
       body: JSON.stringify({
         with: ["account"],
       }),
