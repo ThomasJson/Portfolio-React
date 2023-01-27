@@ -14,7 +14,7 @@ const ArticleScreen = () => {
   const { id } = useParams();
 
   const [comments, setComments] = useState(null);
-  console.log("comments:", comments);
+  // console.log("comments:", comments);
 
   const [pseudo, setPseudo] = useState(null);
   // console.log("pseudo:", pseudo);

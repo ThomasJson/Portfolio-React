@@ -28,7 +28,7 @@ const BlogScreen = () => {
         <Container fluid className="align-center">
           <Container fluid className="blog-section">
             <Container fluid className="blog-container">
-              
+
               {data &&
                 data?.data.map((article) => {
                   return (
