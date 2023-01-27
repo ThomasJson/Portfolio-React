@@ -2,11 +2,14 @@ import "./navBar.scss";
 import React, { useContext, useState, useEffect } from "react";
 import { Button, Container, Nav } from "react-bootstrap";
 import { BiLogInCircle, BiUserPlus } from "react-icons/bi";
-import { ImHome } from "react-icons/im";
+// import { FcElectroDevices } from "react-icons/fc";
+import { AiOutlineHome } from "react-icons/ai";
 import { BiPlanet, BiPaperPlane, BiCrown } from "react-icons/bi";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 import OffCanvas from "./OffCanvas";
+import { getCookie } from "../../helpers/cookieHelper";
+// import video from "./T_glitch.flv";
 
 const NavBar = () => {
   const [pseudo, setPseudo] = useState(null);
@@ -17,6 +20,9 @@ const NavBar = () => {
   useEffect(() => {
     fetch("http://portfolio-api/app_user/" + auth.id, {
       method: "POST",
+      headers: {
+        Authorization: getCookie("blog")
+      },
       body: JSON.stringify({
         with: ["account"],
       }),
@@ -33,17 +39,23 @@ const NavBar = () => {
   return (
     <>
       <Container fluid className="header">
-        <Container className="name-nav gap-4">
-          <h2 className="name">Tom pearson</h2>
+        <Container className="name-nav">
+          <h2 className="name">T</h2>
 
-          <Nav className="navBar gap-5">
+          {/* <div>
+            <video controls>
+              <source src={video} type="video/mp4" />
+            </video>
+          </div> */}
+
+          <Nav className="navBar">
             {auth.role === 4 && (
-              <NavLink to="/admin">
+              <NavLink to="/admin" className="menu-Itemz">
                 <BiCrown />
               </NavLink>
             )}
             <NavLink to="/" className="menu-Itemz">
-              <ImHome />
+              <AiOutlineHome />
             </NavLink>
             <NavLink to="/blog" className="menu-Itemz">
               <BiPlanet />

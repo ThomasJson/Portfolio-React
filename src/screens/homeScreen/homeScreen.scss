@@ -1,0 +1,38 @@
+.home-section {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.presentation {
+  width: 49%;
+  height: 60%;
+  padding: 10px;
+  color: white;
+  background-color: #242526 !important;
+  letter-spacing: 1px;
+}
+.presentation-col {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.presentation h4 {
+    color: #25f4ee;
+}
+.btn-width {
+    width: 25%;
+}
+.three-js-bloc {
+  width: 50%;
+  height: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #242526 !important;
+}
+.img-dimension {
+    width: 500px;
+}

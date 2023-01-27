@@ -6,7 +6,6 @@ import LoadingScreen from "../../screens/loadingScreen/LoadingScreen";
 const DisplayMap = () => {
   const { isLoaded } = useLoadScript({
     // googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
-    googleMapsApiKey: "AIzaSyDJNA4hJbJZfoZf-RwFd4c3IlIlj5QY7Ao",
   });
   if (!isLoaded) return <LoadingScreen />;
   return <Map />;

@@ -4,6 +4,7 @@ import Form from "react-bootstrap/Form";
 import { Button, Container } from "react-bootstrap";
 import doFetch from "../../helpers/fetchHelper";
 import DisplayMap from "../../components/displayMap/DisplayMap";
+import Footer from "../../components/footer/Footer";
 
 const ContactScreen = () => {
   const handleSubmit = async (e) => {
@@ -27,8 +28,9 @@ const ContactScreen = () => {
   };
 
   return (
-    <main>
-      <Container fluid className="center-bloc">
+    <>
+      <main>
+        <Container fluid className="center-bloc">
           <Container fluid className="contact-bloc">
             <Container fluid className="contact-section">
               <h2>Pour me contacter</h2>
@@ -92,8 +94,10 @@ const ContactScreen = () => {
             </Container>
             <DisplayMap />
           </Container>
-      </Container>
-    </main>
+        </Container>
+      </main>
+      <Footer />
+    </>
   );
 };
 

@@ -9,3 +9,9 @@
 .input-spacing {
     width: 48% !important;
 }
+#birthday {
+    letter-spacing: 0.2rem !important;
+}
+::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}

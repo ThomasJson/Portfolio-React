@@ -6,7 +6,7 @@ import { Container } from "react-bootstrap";
 const Article = ({ title, content, category, src, alt, color, border }) => {
   return (
     <>
-      <Card className={"card-style " + border} style={{ width: "18rem" }}>
+      <Card className={"card-style " + border} style={{ width: "15rem" }}>
         
         <Card.Body>
           <Container className={"category-text " + color}>{category}</Container>

@@ -2,9 +2,11 @@ import "./accountScreen.scss";
 import React, { useEffect, useState } from "react";
 import { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
-import { deleteCookie } from "../../helpers/cookieHelper";
+import { deleteCookie, getCookie } from "../../helpers/cookieHelper";
 import { Button, Container } from "react-bootstrap";
 import doFetch from "../../helpers/fetchHelper";
+import Footer from "../../components/footer/Footer";
+
 
 function AccountScreen() {
   const [appUser, setAppUser] = useState(null);
@@ -16,6 +18,9 @@ function AccountScreen() {
   useEffect(() => {
     fetch("http://portfolio-api/app_user/" + auth.id, {
       method: "POST",
+      headers: {
+        Authorization: getCookie("blog")
+      },
       body: JSON.stringify({
         with: ["account"],
       }),
@@ -68,11 +73,11 @@ function AccountScreen() {
       <main>
         <Container fluid className="center-bloc">
           <Container fluid className="params-section">
-            <h2 className="letter-spacing">Paramètres du compte</h2>
+            <h2 className="letter-spacing mb-4">Paramètres du compte</h2>
 
             {/* ///////////// CHANGE PSEUDO ///////////////// */}
-            <Container fluid className="parametres-bloc mt-3">
-              <p className="white letter-spacing mb-2">Pseudo :</p>
+            <Container fluid className="parametres-bloc mt-2">
+              <p className="white letter-spacing mb-2 text-align-center">Pseudo</p>
               <Container fluid className="infos-bloc">
                 <Container fluid className="infos-data">
                   <p className="letter-spacing">
@@ -118,8 +123,8 @@ function AccountScreen() {
             </Container>
 
             {/* ///////////// CHANGE EMAIL ///////////////// */}
-            <Container fluid className="parametres-bloc mt-3">
-              <p className="white letter-spacing mb-2">Email :</p>
+            <Container fluid className="parametres-bloc mt-2">
+              <p className="white letter-spacing mb-2 text-align-center">Mail</p>
               <Container fluid className="infos-bloc">
                 <Container fluid className="infos-data">
                   <p className="letter-spacing">{appUser?.data[0]?.mail}</p>
@@ -136,7 +141,7 @@ function AccountScreen() {
                 <form onSubmit={handleEmailSubmit} className="modif-data-bloc">
                   <input
                     type="text"
-                    placeholder="Nouvelle Adresse Email"
+                    placeholder="Nouveau Mail"
                     id="nouveau-mail"
                     className="account-input"
                     autoComplete="off"
@@ -165,7 +170,7 @@ function AccountScreen() {
 
             {auth.role > 0 && (
               <Button
-                className="btn btn-primary btn-style2 no-radius mt-3 bold"
+                className="btn btn-primary btn-style2 no-radius mt-2 btn-deco"
                 onClick={(e) => {
                   setAuth({ role: 0, id: 0 });
                   deleteCookie("blog");
@@ -178,6 +183,7 @@ function AccountScreen() {
           </Container>
         </Container>
       </main>
+      <Footer />
     </>
   );
 }

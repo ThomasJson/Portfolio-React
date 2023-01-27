@@ -4,6 +4,9 @@ import { useForm } from "react-hook-form";
 import { useNavigate, useParams } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
 import doFetch from "../../helpers/fetchHelper";
+import Footer from "../../components/footer/Footer";
+import { Container } from "react-bootstrap";
+// import Footer from "../../components/footer/Footer";
 
 function AccountValidateScreen() {
   const token = useParams("token");
@@ -30,7 +33,7 @@ function AccountValidateScreen() {
       body: JSON.stringify(formData),
     });
     if (created.data?.result) {
-      navigate("/");
+      navigate("/login");
     }
   };
 
@@ -50,65 +53,78 @@ function AccountValidateScreen() {
 
   return (
     <>
-      {account.data?.result && (
-        <>
-          <h1>Password</h1>
-          <form
-            noValidate
-            className="w-50"
-            onSubmit={handleSubmit(formSubmit, formInvalid)}
-          >
-            <div className="mb-3">
-              <label htmlFor="pass-input" className="form-label">
-                Password{" "}
-                <i className={"text-danger"}>{errors.pass ? " *" : " "}</i>
-              </label>
-              <input
-                id="pass-input"
-                type="password"
-                placeholder="password please"
-                className="form-control"
-                {...register("pass", {
-                  required: true,
-                  regex: /^(?=.*[A-Z]).{6,}$/,
-                })}
-              />
-              <i className={"text-danger d-block"}>
-                {errors.pass
-                  ? "* at least 6 letters including a capital letter"
-                  : " "}
-              </i>
-            </div>
+      <main>
+        <Container fluid className="center-bloc">
+          <div className="password-section">
+            {account.data?.result && (
+              <>
+                <h2 className="mb-4">Password</h2>
+                <form
+                  noValidate
+                  className="pass-form"
+                  onSubmit={handleSubmit(formSubmit, formInvalid)}
+                >
+                  {/* <label htmlFor="pass-input" className="form-label">
+                    Password{" "}
+                    <i className={"text-danger"}>{errors.pass ? " *" : " "}</i>
+                  </label> */}
+                  <input
+                    id="pass-input"
+                    type="password"
+                    placeholder="Enter Password"
+                    className="mb-3"
+                    {...register("pass", {
+                      required: true,
+                      regex: /^(?=.*[A-Z]).{6,}$/,
+                    })}
+                    onInput={() => {
+                      const input = document.getElementById("pass-input");
+                      input.classList.add("onInput");
+                    }}
+                  />
+                  <i className={"text-danger d-block"}>
+                    {errors.pass
+                      ? "* at least 6 letters including a capital letter"
+                      : " "}
+                  </i>
 
-            <div className="mb-3">
-              <label htmlFor="confirm-input" className="form-label">
-                Confirm{" "}
-                <i className={"text-danger"}>{errors.confirm ? " *" : " "}</i>
-              </label>
-              <input
-                id="confirm-input"
-                type="password"
-                placeholder="confirm please"
-                className="form-control"
-                {...register("confirm", {
-                  required: true,
-                  regex: /^(?=.*[A-Z]).{6,}$/,
-                  validate: validPw,
-                })}
-              />
-              <i className={"text-danger d-block"}>
-                {errors.confirm
-                  ? "* must be the same as entered password"
-                  : " "}
-              </i>
-            </div>
+                  {/* <label htmlFor="confirm-input" className="form-label">
+                    Confirm{" "}
+                    <i className={"text-danger"}>
+                      {errors.confirm ? " *" : " "}
+                    </i>
+                  </label> */}
+                  <input
+                    id="confirm-input"
+                    type="password"
+                    placeholder="Confirm Password"
+                    className="mb-3"
+                    {...register("confirm", {
+                      required: true,
+                      regex: /^(?=.*[A-Z]).{6,}$/,
+                      validate: validPw,
+                    })}
+                    onInput={() => {
+                      const input = document.getElementById("confirm-input");
+                      input.classList.add("onInput");
+                    }}
+                  />
+                  <i className={"text-danger d-block"}>
+                    {errors.confirm
+                      ? "* must be the same as entered password"
+                      : " "}
+                  </i>
 
-            <button type="submit" className="btn btn-primary">
-              Submit
-            </button>
-          </form>
-        </>
-      )}
+                  <button type="submit" className="btn btn-primary btn-style w-100">
+                    Submit
+                  </button>
+                </form>
+              </>
+            )}
+          </div>
+        </Container>
+      </main>
+      <Footer />
     </>
   );
 }

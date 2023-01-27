@@ -26,32 +26,51 @@
 .name {
   padding: 0px !important;
   margin: 0px !important;
-  margin-left: 8px !important;
+  margin-left: 18px !important;
+  font-size: 2.5em;
   color: white;
 }
 .navBar {
   display: flex;
+  width: 30%;
   flex-direction: row !important;
+  justify-content: space-around;
   align-items: center;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
-// .navBar a {
-//   text-decoration: underline 4px white;
-//   text-underline-offset: 0.2em;
-//   transition: text-decoration-color 300ms, text-underline-offset 300ms;
-
-// }
-// .navBar a:hover {
-//   text-decoration-color: rgba(0, 0, 255, 1) !important;
-//   text-underline-offset: 0.4em !important;
-// }
-// .navBar a:focus {
-//   color: red !important;
-// }
+.navBar svg {
+  font-size: 1.9em;
+}
+.navBar svg:hover {
+  color: #25f4ee;
+}
+.menu-Itemz:focus {
+  color: #25f4ee !important;
+}
+.menu-Itemz {
+  position: relative;
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+.menu-Itemz::after { 
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  display: block;
+  background: none repeat scroll 0 0 transparent;
+  height: 2px;
+  width: 0;
+  background: #25f4ee;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+}
+.menu-Itemz:hover::after { 
+  width: 100%; 
+  left: 0; 
+}
 
 // ---------------------------------------------------------- RIGHT BLOC -------------------------------------------------------------------
 .btn-bloc {

@@ -24,8 +24,7 @@ main {
   right: 0px;
   overflow: auto;
   min-height: 80vh;
-  padding-top: 12px;
-  padding-bottom: 12px;
+  padding: 10px;
   background-color: #18191a;
 }
 a {
@@ -89,7 +88,6 @@ button.btn.btn-primary {
 }
 .btn-style {
   color: white !important;
-  font-size: 1.1em !important;
 }
 .btn-style:hover {
   color: white !important;
@@ -108,6 +106,9 @@ button.btn.btn-primary {
 
 // ---------------------------------------- GLOBAL CLASSES ----------------------------------------------------
 
+.bloc-padding {
+  padding: 20px !important;
+}
 .rOw {
   display: flex;
   flex-direction: row;
@@ -120,6 +121,10 @@ button.btn.btn-primary {
   justify-content: center;
 }
 .align-center {
+  height: 100%;
+  display: flex;
+  padding: 0px !important;
+  flex-direction: row;
   align-items: center !important;
 }
 .space-Evenly {
@@ -145,8 +150,6 @@ button.btn.btn-primary {
   min-height: 100%;
   padding: 0px !important;
   width: 70% !important;
-  // border: 1px solid rgba(255, 255, 255, 0.399);
-  // border: 1px solid #25f4ee;
 }
 .letter-spacing {
   letter-spacing: 1px !important;
@@ -160,7 +163,9 @@ button.btn.btn-primary {
 .bold {
   font-weight: bold !important;
 }
-
+.text-align-center {
+  text-align: center;
+}
 // ---------------------------------------- MEDIA QUERIES ----------------------------------------------------
 
 @media screen and (max-width: 690px) {
@@ -168,27 +173,67 @@ button.btn.btn-primary {
   #burger-menu {
     display: block !important;
   }
-  .navBar.gap-5.nav {
+  .navBar.nav {
     display: none !important;
   }
   // ----- CENTER BLOC -------
   .center-bloc {
-    width: 90% !important;
+    width: 100% !important;
+  }
+  // ----- HOME SCREEN -------
+  .home-section {
+    display: flex;
+    flex-direction: column !important;
+  }
+  .presentation {
+    width: 100% !important;
+  }
+  .btn-width {
+    width: 35% !important;
+  }
+  .three-js-bloc {
+    width: 100% !important;
+    margin-top: 10px !important;
+  }
+  .img-dimension {
+    width: 280px !important;
   }
 
   // ----- BLOG SCREEN -------
+  div.blog-section.container-fluid {
+    margin-top: 450px !important;
+  }
   .blog-container.container-fluid {
     display: flex;
     flex-direction: column !important;
     align-items: center !important;
-    padding-left: 10px !important;
-    padding-right: 10px !important;
+    padding: 0px 10px 0px 10px !important;
   }
   // ---- ARTICLE SCREEN -----
+  .singleArticle-section {
+    flex-direction: column !important;
+  }
+  .singleArticle-container {
+    width: 100% !important;
+    padding: 0px !important;
+    margin: 0px !important;
+  }
+  .align-category-title {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+  .align-category-title h2 {
+    margin-left: 0px !important;
+  }
   img.img-spacing {
     float: none;
     width: 100% !important;
     margin-bottom: 10px !important;
+  }
+  .comments-bloc {
+    clear: both !important;
+    margin: 10px 0px 10px 0px !important;
+    width: 100% !important;
   }
   // ----- CONTACT SCREEN ----
   .contact-bloc {
@@ -217,6 +262,10 @@ button.btn.btn-primary {
   .infos-data {
     display: flex;
     flex-direction: column !important;
+  }
+  // ----- ADMIN SCREEN -------
+  .admin-bloc {
+    width: 75% !important;
   }
   // -------- FOOTER ----------
   .inspired {

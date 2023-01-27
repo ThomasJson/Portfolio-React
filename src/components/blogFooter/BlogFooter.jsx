@@ -1,11 +1,11 @@
-import "./footer.scss";
+import "./blogFooter.scss";
 import React from "react";
 import { Container } from "react-bootstrap";
-import { BsFacebook, BsInstagram, BsGithub } from "react-icons/bs";
-import { SiTiktok, SiDiscord } from "react-icons/si";
+import { BsController, BsCurrencyDollar } from "react-icons/bs";
+import { MdDeveloperMode } from "react-icons/md";
 import { NavLink } from "react-router-dom";
 
-const Footer = () => {
+const BlogFooter = () => {
   return (
     <footer>
       <p className="copyright">© 2022 Copyright: Tom Pearson</p>
@@ -13,38 +13,29 @@ const Footer = () => {
       <Container fluid className="socials-bloc">
         <NavLink to="/">
           <Container className="socials">
-            <BsFacebook />
+            <BsController className="controller-color"/>
           </Container>
         </NavLink>
 
         <NavLink to="/">
           <Container className="socials">
-            <SiDiscord />
+            <BsCurrencyDollar className="dollar-color" />
           </Container>
         </NavLink>
 
         <NavLink to="/">
           <Container className="socials">
-            <BsInstagram />
+            <MdDeveloperMode className="dev-color" />
           </Container>
         </NavLink>
 
-        <NavLink to="/">
-          <Container className="socials">
-            <BsGithub />
-          </Container>
-        </NavLink>
-
-        <NavLink to="/">
-          <Container className="socials">
-            <SiTiktok />
-          </Container>
-        </NavLink>
       </Container>
 
-      <p className="inspired">Inspired by <span className="jack bold">Jack</span></p>
+      <p className="inspired">
+        Inspired by <span className="jack bold">Jack</span>
+      </p>
     </footer>
   );
 };
 
-export default Footer;
+export default BlogFooter;

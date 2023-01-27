@@ -7,6 +7,7 @@ import doFetch from "../../helpers/fetchHelper";
 import { AuthContext } from "../../contexts/AuthContext";
 import { deleteCookie, setCookie } from "../../helpers/cookieHelper";
 import { Container } from "react-bootstrap";
+import Footer from "../../components/footer/Footer";
 
 const LoginScreen = () => {
   const { setAuth } = useContext(AuthContext);
@@ -21,24 +22,9 @@ const LoginScreen = () => {
 
     const emailInput = document.getElementById("email-input");
     const emailPattern = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
-
     if (emailPattern.test(emailInput.value)) {
       isValid.email = true;
     }
-
-    ///////////////////////////////////////////////////////////////////////////
-
-    // if (!emailPattern.test(emailInput.value)) {
-    //   const infos = document.getElementById('infoWarning');
-    //   infos.classList.add('d-flex');
-    // }
-
-    // emailInput.addEventListener("change", () => {
-    //   const infos = document.getElementById("infoWarning");
-    //   infos.classList.add("d-flex");
-    // });
-
-    ///////////////////////////////////////////////////////////////////////////
 
     const passwordInput = document.getElementById("password-input");
     const passwordPattern = /^(?=.*[A-Z]).{6,}$/;
@@ -77,40 +63,47 @@ const LoginScreen = () => {
     }
   };
   return (
-    <main>
-      <Container fluid className="center-bloc">
-        <Container fluid className="login-section">
-          <h2>Connexion</h2>
-          <form onSubmit={handleSubmit} className="coL mb-2 gap-3 form-spacing" noValidate>
-            <input
-              id="email-input"
-              type="email"
-              placeholder="Adresse e-mail"
-              name="mail"
-              autoComplete="off"
-              onInput={() => {
-                const input = document.getElementById('email-input');
-                input.classList.add('onInput');
-              }}
-            />
-            <input
-              id="password-input"
-              type="password"
-              placeholder="Mot de passe"
-              name="password"
-              onInput={() => {
-                const input = document.getElementById('password-input');
-                input.classList.add('onInput');
-              }}
-            />
-            <Button type="submit" className="btn-style no-radius w-100">
-              Se connecter
-            </Button>
-            <NavLink to="/">Mot de passe oublié ?</NavLink>
-          </form>
+    <>
+      <main>
+        <Container fluid className="center-bloc">
+          <Container fluid className="login-section">
+            <h2 className="mb-4">Connexion</h2>
+            <form
+              onSubmit={handleSubmit}
+              className="coL mb-2 gap-3 form-spacing"
+              noValidate
+            >
+              <input
+                id="email-input"
+                type="email"
+                placeholder="Adresse e-mail"
+                name="mail"
+                autoComplete="off"
+                onInput={() => {
+                  const input = document.getElementById("email-input");
+                  input.classList.add("onInput");
+                }}
+              />
+              <input
+                id="password-input"
+                type="password"
+                placeholder="Mot de passe"
+                name="password"
+                onInput={() => {
+                  const input = document.getElementById("password-input");
+                  input.classList.add("onInput");
+                }}
+              />
+              <Button type="submit" className="btn-style no-radius w-100">
+                Se connecter
+              </Button>
+              <NavLink to="/">Mot de passe oublié ?</NavLink>
+            </form>
+          </Container>
         </Container>
-      </Container>
-    </main>
+      </main>
+      <Footer/>
+    </>
   );
 };
 
